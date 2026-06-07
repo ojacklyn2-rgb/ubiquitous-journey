@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog — Ojacklyn</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ─── Navbar ─── -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <div class="nav__logo-mark">
+        <svg viewBox="0 0 16 16"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 2a4 4 0 110 8A4 4 0 018 4z"/></svg>
+      </div>
+      Ojacklyn
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html" class="active">Blog</a></li>
+      <li><a href="public-services.html">Public Services</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="public-services.html" class="btn btn--teal btn--lg">Find a Service</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── Page Header ─── -->
+<div class="page-header">
+  <div class="page-header__inner">
+    <span class="badge badge--teal">Blog</span>
+    <h1>Writing &amp; Reflections</h1>
+    <p>Essays, explainers, and personal perspectives on public health, equity, and community in New Jersey.</p>
+  </div>
+</div>
+
+<!-- ─── Search + Filter ─── -->
+<section style="padding:2.5rem var(--container-x);border-bottom:1px solid var(--color-border-light);">
+  <div class="container" style="max-width:var(--max-width-xl);padding:0;">
+    <div style="display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:space-between;">
+      <div class="search-bar">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" placeholder="Search articles…">
+      </div>
+      <div class="filter-tabs">
+        <button class="filter-tab active">All</button>
+        <button class="filter-tab">Health Equity</button>
+        <button class="filter-tab">Policy</button>
+        <button class="filter-tab">Community</button>
+        <button class="filter-tab">Personal</button>
+        <button class="filter-tab">Resources</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Featured Post ─── -->
+<section style="padding:var(--section-y) 0;">
+  <div class="section">
+    <div style="margin-bottom:1rem;">
+      <span class="badge badge--teal">Featured</span>
+    </div>
+    <div class="feature-row" style="gap:3rem;">
+      <div class="feature-row__visual" style="aspect-ratio:3/2;">[ Featured post hero image ]</div>
+      <div class="feature-row__text">
+        <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1rem;">
+          <span class="badge badge--green">Health Equity</span>
+          <span style="font-size:var(--text-xs);color:var(--color-text-tertiary);">— min read · —</span>
+        </div>
+        <h3 style="font-size:clamp(1.5rem,3vw,2.25rem);">[ Featured article headline ]</h3>
+        <p>A longer excerpt from the featured article that provides readers with a compelling preview of the content and draws them into the full piece.</p>
+        <a href="#" class="btn btn--primary btn--lg" style="margin-top:.5rem;">Read article</a>
+        <div style="display:flex;align-items:center;gap:.75rem;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--color-border-light);">
+          <div class="post-card__avatar"></div>
+          <div>
+            <div style="font-size:var(--text-sm);font-weight:var(--font-semibold);">Ojacklyn</div>
+            <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);">Author &amp; Researcher</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ─── Post Grid ─── -->
+<section style="padding:var(--section-y) 0;">
+  <div class="section">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2.5rem;">
+      <h2 style="font-size:var(--text-2xl);font-weight:var(--font-bold);">All posts</h2>
+      <span style="font-size:var(--text-sm);color:var(--color-text-tertiary);">— articles</span>
+    </div>
+    <div class="grid-3">
+      <!-- Repeat post card pattern for each post -->
+      <article class="post-card">
+        <div class="post-card__thumb">[ Thumbnail ]</div>
+        <div class="post-card__body">
+          <div class="post-card__meta">
+            <span class="badge badge--teal">Policy</span>
+            <span>— min read</span>
+          </div>
+          <h3 class="post-card__title">[ Article title ]</h3>
+          <p class="post-card__excerpt">Brief excerpt previewing the article content and its relevance to NJ public health access.</p>
+          <div class="post-card__footer">
+            <div class="post-card__author">
+              <div class="post-card__avatar"></div>
+              <span>Ojacklyn · —</span>
+            </div>
+            <a href="#" class="btn btn--ghost" style="font-size:.8rem;padding:.3rem .75rem;">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__thumb">[ Thumbnail ]</div>
+        <div class="post-card__body">
+          <div class="post-card__meta">
+            <span class="badge badge--green">Community</span>
+            <span>— min read</span>
+          </div>
+          <h3 class="post-card__title">[ Article title ]</h3>
+          <p class="post-card__excerpt">Brief excerpt previewing the article content and its relevance to NJ public health access.</p>
+          <div class="post-card__footer">
+            <div class="post-card__author">
+              <div class="post-card__avatar"></div>
+              <span>Ojacklyn · —</span>
+            </div>
+            <a href="#" class="btn btn--ghost" style="font-size:.8rem;padding:.3rem .75rem;">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__thumb">[ Thumbnail ]</div>
+        <div class="post-card__body">
+          <div class="post-card__meta">
+            <span class="badge badge--blue">Health Equity</span>
+            <span>— min read</span>
+          </div>
+          <h3 class="post-card__title">[ Article title ]</h3>
+          <p class="post-card__excerpt">Brief excerpt previewing the article content and its relevance to NJ public health access.</p>
+          <div class="post-card__footer">
+            <div class="post-card__author">
+              <div class="post-card__avatar"></div>
+              <span>Ojacklyn · —</span>
+            </div>
+            <a href="#" class="btn btn--ghost" style="font-size:.8rem;padding:.3rem .75rem;">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__thumb">[ Thumbnail ]</div>
+        <div class="post-card__body">
+          <div class="post-card__meta">
+            <span class="badge badge--teal">Resources</span>
+            <span>— min read</span>
+          </div>
+          <h3 class="post-card__title">[ Article title ]</h3>
+          <p class="post-card__excerpt">Brief excerpt previewing the article content and its relevance to NJ public health access.</p>
+          <div class="post-card__footer">
+            <div class="post-card__author">
+              <div class="post-card__avatar"></div>
+              <span>Ojacklyn · —</span>
+            </div>
+            <a href="#" class="btn btn--ghost" style="font-size:.8rem;padding:.3rem .75rem;">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__thumb">[ Thumbnail ]</div>
+        <div class="post-card__body">
+          <div class="post-card__meta">
+            <span class="badge badge--green">Personal</span>
+            <span>— min read</span>
+          </div>
+          <h3 class="post-card__title">[ Article title ]</h3>
+          <p class="post-card__excerpt">Brief excerpt previewing the article content and its relevance to NJ public health access.</p>
+          <div class="post-card__footer">
+            <div class="post-card__author">
+              <div class="post-card__avatar"></div>
+              <span>Ojacklyn · —</span>
+            </div>
+            <a href="#" class="btn btn--ghost" style="font-size:.8rem;padding:.3rem .75rem;">Read →</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="post-card">
+        <div class="post-card__thumb">[ Thumbnail ]</div>
+        <div class="post-card__body">
+          <div class="post-card__meta">
+            <span class="badge badge--blue">Policy</span>
+            <span>— min read</span>
+          </div>
+          <h3 class="post-card__title">[ Article title ]</h3>
+          <p class="post-card__excerpt">Brief excerpt previewing the article content and its relevance to NJ public health access.</p>
+          <div class="post-card__footer">
+            <div class="post-card__author">
+              <div class="post-card__avatar"></div>
+              <span>Ojacklyn · —</span>
+            </div>
+            <a href="#" class="btn btn--ghost" style="font-size:.8rem;padding:.3rem .75rem;">Read →</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!-- Pagination -->
+    <div style="display:flex;justify-content:center;align-items:center;gap:.5rem;margin-top:4rem;">
+      <button class="btn btn--outline" disabled style="opacity:.4;">← Prev</button>
+      <button class="btn btn--primary" style="min-width:40px;">1</button>
+      <button class="btn btn--ghost" style="min-width:40px;">2</button>
+      <button class="btn btn--ghost" style="min-width:40px;">3</button>
+      <span style="color:var(--color-text-tertiary);font-size:var(--text-sm);">…</span>
+      <button class="btn btn--outline">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Newsletter ─── -->
+<section style="background:var(--color-bg-secondary);padding:var(--section-y) 0;">
+  <div class="section">
+    <div class="callout callout--teal">
+      <div class="callout__icon">📬</div>
+      <div class="callout__text">
+        <h3>New posts, straight to you.</h3>
+        <p>Subscribe to get notified when new articles are published. No spam.</p>
+      </div>
+      <form style="display:flex;gap:.75rem;flex-wrap:wrap;flex-shrink:0;">
+        <input type="email" placeholder="your@email.com" style="padding:.65rem 1.1rem;border:1px solid var(--color-border-medium);border-radius:var(--radius-md);font-size:var(--text-sm);font-family:var(--font-sans);outline:none;background:#fff;">
+        <button type="submit" class="btn btn--primary">Subscribe</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <a href="index.html" class="footer__logo">
+        <div class="footer__logo-mark">
+          <svg viewBox="0 0 16 16"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 2a4 4 0 110 8A4 4 0 018 4z"/></svg>
+        </div>
+        Ojacklyn
+      </a>
+      <div class="footer__social"><a href="#">𝕏</a><a href="#">IG</a><a href="#">in</a></div>
+    </div>
+    <div class="footer__grid">
+      <div class="footer__col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li><a href="public-services.html">Public Services</a></li><li><a href="about.html">About</a></li></ul></div>
+      <div class="footer__col"><h4>Services</h4><ul><li><a href="public-services.html">Primary Care</a></li><li><a href="public-services.html">Mental Health</a></li><li><a href="public-services.html">Food Access</a></li><li><a href="public-services.html">Housing</a></li></ul></div>
+      <div class="footer__col"><h4>Blog Topics</h4><ul><li><a href="blog.html">Health Equity</a></li><li><a href="blog.html">Policy</a></li><li><a href="blog.html">Community</a></li><li><a href="blog.html">Personal</a></li></ul></div>
+      <div class="footer__col"><h4>More</h4><ul><li><a href="about.html">About</a></li><li><a href="#">Submit a Resource</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Ojacklyn. Made with care in New Jersey.</p>
+      <div class="footer__legal"><a href="#">Privacy</a><a href="#">Accessibility</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

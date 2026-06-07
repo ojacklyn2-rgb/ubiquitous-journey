@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public Services — Ojacklyn</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ─── Navbar ─── -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="nav__logo">
+      <div class="nav__logo-mark">
+        <svg viewBox="0 0 16 16"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 2a4 4 0 110 8A4 4 0 018 4z"/></svg>
+      </div>
+      Ojacklyn
+    </a>
+    <ul class="nav__links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="public-services.html" class="active">Public Services</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav__actions">
+      <a href="public-services.html" class="btn btn--teal btn--lg">Find a Service</a>
+    </div>
+    <button class="nav__hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ─── Page Header ─── -->
+<div class="page-header">
+  <div class="page-header__inner">
+    <span class="badge badge--green">Resource Database</span>
+    <h1>Public Services in NJ</h1>
+    <p>A curated directory of free and low-cost public health resources across all 21 New Jersey counties. Search, filter, and find what you need.</p>
+  </div>
+</div>
+
+<!-- ─── Search + Filters ─── -->
+<section style="padding:2.5rem var(--container-x);border-bottom:1px solid var(--color-border-light);background:var(--color-bg-secondary);">
+  <div class="container" style="max-width:var(--max-width-xl);padding:0;">
+    <div style="display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+      <div class="search-bar" style="max-width:100%;flex:1;">
+        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="search" placeholder="Search services, programs, or organizations…">
+      </div>
+      <div style="display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;">
+        <select style="padding:.65rem 1rem;border:1px solid var(--color-border-medium);border-radius:var(--radius-md);font-size:var(--text-sm);font-family:var(--font-sans);color:var(--color-text-primary);background:#fff;outline:none;">
+          <option value="">All Counties</option>
+          <option>Atlantic</option><option>Bergen</option><option>Burlington</option>
+          <option>Camden</option><option>Cape May</option><option>Cumberland</option>
+          <option>Essex</option><option>Gloucester</option><option>Hudson</option>
+          <option>Hunterdon</option><option>Mercer</option><option>Middlesex</option>
+          <option>Monmouth</option><option>Morris</option><option>Ocean</option>
+          <option>Passaic</option><option>Salem</option><option>Somerset</option>
+          <option>Sussex</option><option>Union</option><option>Warren</option>
+        </select>
+        <select style="padding:.65rem 1rem;border:1px solid var(--color-border-medium);border-radius:var(--radius-md);font-size:var(--text-sm);font-family:var(--font-sans);color:var(--color-text-primary);background:#fff;outline:none;">
+          <option value="">All Languages</option>
+          <option>English</option><option>Spanish</option><option>Portuguese</option>
+          <option>Arabic</option><option>Hindi</option><option>Korean</option>
+        </select>
+      </div>
+    </div>
+    <div class="filter-tabs">
+      <button class="filter-tab active">All Services</button>
+      <button class="filter-tab">Primary Care</button>
+      <button class="filter-tab">Mental Health</button>
+      <button class="filter-tab">Food Access</button>
+      <button class="filter-tab">Housing</button>
+      <button class="filter-tab">Substance Use</button>
+      <button class="filter-tab">Women's Health</button>
+      <button class="filter-tab">Children &amp; Family</button>
+      <button class="filter-tab">Dental</button>
+      <button class="filter-tab">Vision</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Category Overview Cards ─── -->
+<section style="padding:var(--section-y) 0;">
+  <div class="section">
+    <div class="section-header">
+      <span class="badge badge--teal">Browse by Category</span>
+      <h2>What do you need?</h2>
+      <p>Select a category to filter the directory below, or scroll down to view all available resources.</p>
+    </div>
+    <div class="grid-4">
+      <div class="card card--muted" style="cursor:pointer;">
+        <div class="card__icon" style="background:var(--color-pastel-teal);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-teal)" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="card__title">Primary Care</div>
+        <div class="card__body">FQHCs, free clinics, walk-in centers, immunizations.</div>
+        <div style="margin-top:.75rem;font-size:var(--text-xs);color:var(--color-text-tertiary);">— locations</div>
+      </div>
+      <div class="card card--muted" style="cursor:pointer;">
+        <div class="card__icon" style="background:var(--color-pastel-blue);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="1.75"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="card__title">Mental Health</div>
+        <div class="card__body">Counseling, crisis lines, peer support, outpatient programs.</div>
+        <div style="margin-top:.75rem;font-size:var(--text-xs);color:var(--color-text-tertiary);">— locations</div>
+      </div>
+      <div class="card card--muted" style="cursor:pointer;">
+        <div class="card__icon" style="background:var(--color-pastel-green);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-green)" stroke-width="1.75"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div class="card__title">Food Access</div>
+        <div class="card__body">Food banks, SNAP, community fridges, meal delivery.</div>
+        <div style="margin-top:.75rem;font-size:var(--text-xs);color:var(--color-text-tertiary);">— locations</div>
+      </div>
+      <div class="card card--muted" style="cursor:pointer;">
+        <div class="card__icon" style="background:var(--color-pastel-teal);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-teal)" stroke-width="1.75"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="card__title">Housing</div>
+        <div class="card__body">Emergency shelter, rental assistance, tenant rights.</div>
+        <div style="margin-top:.75rem;font-size:var(--text-xs);color:var(--color-text-tertiary);">— locations</div>
+      </div>
+      <div class="card card--muted" style="cursor:pointer;">
+        <div class="card__icon" style="background:var(--color-pastel-blue);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="1.75"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+        </div>
+        <div class="card__title">Substance Use</div>
+        <div class="card__body">Treatment programs, harm reduction, recovery support.</div>
+        <div style="margin-top:.75rem;font-size:var(--text-xs);color:var(--color-text-tertiary);">— locations</div>
+      </div>
+      <div class="card card--muted" style="cursor:pointer;">
+        <div class="card__icon" style="background:var(--color-pastel-green);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-green)" stroke-width="1.75"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+        </div>
+        <div class="card__title">Women's Health</div>
+        <div class="card__body">Prenatal care, family planning, maternal support.</div>
+        <div style="margin-top:.75rem;font-size:var(--text-xs);color:var(--color-text-tertiary);">— locations</div>
+      </div>
+      <div class="card card--muted" style="cursor:pointer;">
+        <div class="card__icon" style="background:var(--color-pastel-teal);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-teal)" stroke-width="1.75"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="card__title">Children &amp; Family</div>
+        <div class="card__body">Pediatric care, child welfare, early intervention programs.</div>
+        <div style="margin-top:.75rem;font-size:var(--text-xs);color:var(--color-text-tertiary);">— locations</div>
+      </div>
+      <div class="card card--muted" style="cursor:pointer;">
+        <div class="card__icon" style="background:var(--color-pastel-blue);">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--color-accent-blue)" stroke-width="1.75"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </div>
+        <div class="card__title">Dental &amp; Vision</div>
+        <div class="card__body">Low-cost dental clinics, eye exams, glasses assistance.</div>
+        <div style="margin-top:.75rem;font-size:var(--text-xs);color:var(--color-text-tertiary);">— locations</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- ─── Directory Listing ─── -->
+<section style="padding:var(--section-y) 0;">
+  <div class="section">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;margin-bottom:2rem;">
+      <h2 style="font-size:var(--text-2xl);font-weight:var(--font-bold);">All resources</h2>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <span style="font-size:var(--text-sm);color:var(--color-text-tertiary);">— results</span>
+        <select style="padding:.45rem .9rem;border:1px solid var(--color-border-medium);border-radius:var(--radius-md);font-size:var(--text-sm);font-family:var(--font-sans);color:var(--color-text-primary);background:#fff;outline:none;">
+          <option>Sort: Relevance</option>
+          <option>Sort: A → Z</option>
+          <option>Sort: County</option>
+        </select>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <!-- Service Card 1 -->
+      <div class="service-card">
+        <div class="service-card__icon">
+          <svg viewBox="0 0 24 24" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="service-card__content">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+            <div>
+              <div class="service-card__name">[ Organization Name ]</div>
+              <div class="service-card__desc">Brief description of the services offered, who they serve, eligibility requirements, and how to access care. Keep this to 1–2 sentences.</div>
+              <div class="service-card__tags">
+                <span class="tag">Primary Care</span>
+                <span class="tag">Essex County</span>
+                <span class="tag">Free</span>
+                <span class="tag">Walk-in</span>
+                <span class="tag">Spanish</span>
+              </div>
+            </div>
+            <div style="flex-shrink:0;text-align:right;">
+              <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);margin-bottom:.5rem;">[ City, NJ ]</div>
+              <a href="#" class="btn btn--outline" style="font-size:var(--text-xs);padding:.35rem .8rem;">Visit site →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Card 2 -->
+      <div class="service-card">
+        <div class="service-card__icon" style="background:var(--color-pastel-blue);">
+          <svg viewBox="0 0 24 24" stroke="var(--color-accent-blue)" stroke-width="1.75" fill="none"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        </div>
+        <div class="service-card__content">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+            <div>
+              <div class="service-card__name">[ Organization Name ]</div>
+              <div class="service-card__desc">Brief description of the services offered, who they serve, eligibility requirements, and how to access care.</div>
+              <div class="service-card__tags">
+                <span class="tag">Mental Health</span>
+                <span class="tag">Hudson County</span>
+                <span class="tag">Sliding Scale</span>
+                <span class="tag">Telehealth</span>
+              </div>
+            </div>
+            <div style="flex-shrink:0;text-align:right;">
+              <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);margin-bottom:.5rem;">[ City, NJ ]</div>
+              <a href="#" class="btn btn--outline" style="font-size:var(--text-xs);padding:.35rem .8rem;">Visit site →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Service Card 3 -->
+      <div class="service-card">
+        <div class="service-card__icon" style="background:var(--color-pastel-green);">
+          <svg viewBox="0 0 24 24" stroke="var(--color-accent-green)" stroke-width="1.75" fill="none"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
+        </div>
+        <div class="service-card__content">
+          <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;flex-wrap:wrap;">
+            <div>
+              <div class="service-card__name">[ Organization Name ]</div>
+              <div class="service-card__desc">Brief description of the services offered, who they serve, eligibility requirements, and how to access care.</div>
+              <div class="service-card__tags">
+                <span class="tag">Food Access</span>
+                <span class="tag">Camden County</span>
+                <span class="tag">SNAP</span>
+                <span class="tag">No ID Required</span>
+              </div>
+            </div>
+            <div style="flex-shrink:0;text-align:right;">
+              <div style="font-size:var(--text-xs);color:var(--color-text-tertiary);margin-bottom:.5rem;">[ City, NJ ]</div>
+              <a href="#" class="btn btn--outline" style="font-size:var(--text-xs);padding:.35rem .8rem;">Visit site →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- More cards would go here -->
+      <div style="display:flex;align-items:center;justify-content:center;padding:2rem;background:var(--color-bg-secondary);border-radius:var(--radius-xl);border:1px dashed var(--color-border-medium);">
+        <span style="color:var(--color-text-tertiary);font-size:var(--text-sm);">[ Additional resource cards load here ]</span>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div style="display:flex;justify-content:center;align-items:center;gap:.5rem;margin-top:4rem;">
+      <button class="btn btn--outline" disabled style="opacity:.4;">← Prev</button>
+      <button class="btn btn--primary" style="min-width:40px;">1</button>
+      <button class="btn btn--ghost" style="min-width:40px;">2</button>
+      <button class="btn btn--ghost" style="min-width:40px;">3</button>
+      <span style="color:var(--color-text-tertiary);font-size:var(--text-sm);">…</span>
+      <button class="btn btn--outline">Next →</button>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Submit CTA ─── -->
+<section style="background:var(--color-bg-secondary);padding:var(--section-y) 0;">
+  <div class="section">
+    <div class="callout callout--green">
+      <div class="callout__icon">🗂️</div>
+      <div class="callout__text">
+        <h3>Know a resource we're missing?</h3>
+        <p>This database is community-maintained. If you know of a public health service in NJ that isn't listed here, submit it and help someone find care.</p>
+      </div>
+      <a href="#" class="btn btn--primary btn--lg" style="flex-shrink:0;">Submit a Resource</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── Footer ─── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="footer__top">
+      <a href="index.html" class="footer__logo">
+        <div class="footer__logo-mark">
+          <svg viewBox="0 0 16 16"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 2a4 4 0 110 8A4 4 0 018 4z"/></svg>
+        </div>
+        Ojacklyn
+      </a>
+      <div class="footer__social"><a href="#">𝕏</a><a href="#">IG</a><a href="#">in</a></div>
+    </div>
+    <div class="footer__grid">
+      <div class="footer__col"><h4>Navigate</h4><ul><li><a href="index.html">Home</a></li><li><a href="blog.html">Blog</a></li><li><a href="public-services.html">Public Services</a></li><li><a href="about.html">About</a></li></ul></div>
+      <div class="footer__col"><h4>Services</h4><ul><li><a href="public-services.html">Primary Care</a></li><li><a href="public-services.html">Mental Health</a></li><li><a href="public-services.html">Food Access</a></li><li><a href="public-services.html">Housing</a></li></ul></div>
+      <div class="footer__col"><h4>Blog Topics</h4><ul><li><a href="blog.html">Health Equity</a></li><li><a href="blog.html">Policy</a></li><li><a href="blog.html">Community</a></li><li><a href="blog.html">Personal</a></li></ul></div>
+      <div class="footer__col"><h4>More</h4><ul><li><a href="about.html">About</a></li><li><a href="#">Submit a Resource</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="footer__bottom">
+      <p>© 2026 Ojacklyn. Made with care in New Jersey.</p>
+      <div class="footer__legal"><a href="#">Privacy</a><a href="#">Accessibility</a></div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
