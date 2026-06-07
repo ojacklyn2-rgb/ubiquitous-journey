@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main, claude/loving-edison-Zg6IB]
+    branches: [claude/blissful-newton-m52Q0, claude/loving-edison-Zg6IB]
 
 permissions:
   contents: read
