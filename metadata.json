@@ -1,0 +1,6 @@
+{
+  "name": "Ojacklyn",
+  "description": "A public health resource and blog platform focused on healthcare access, health equity, and community health for underserved communities in New Jersey.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
