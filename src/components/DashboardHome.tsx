@@ -16,7 +16,7 @@ const AUDIENCE_CARDS = [
 ];
 
 const HOW_IT_WORKS = [
-  { step: '01', title: 'Browse Resources',  desc: 'Filter 19 verified NJ organizations by who they serve.',              icon: Search     },
+  { step: '01', title: 'Browse Resources',  desc: 'Filter 20 verified NJ organizations by who they serve.',              icon: Search     },
   { step: '02', title: 'View Full Details', desc: 'Services, contact info, hours, and an interactive map per location.', icon: MapPin     },
   { step: '03', title: 'Get Connected',     desc: 'Call, visit the site, or get directions — no signup, no cost.',       icon: CheckCircle },
 ];
@@ -123,7 +123,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
       <section className="relative grain bg-gray-900 py-8 rounded-2xl max-w-5xl mx-auto px-4 overflow-hidden">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center divide-y-2 md:divide-y-0 md:divide-x divide-gray-700/50 relative z-10">
           {[
-            { value: '19',   label: 'Verified Resources' },
+            { value: '20',   label: 'Verified Resources' },
             { value: '4',    label: 'Service Categories' },
             { value: '21',   label: 'NJ Counties Covered' },
             { value: '100%', label: 'Free to Use' },
@@ -339,7 +339,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
             onClick={() => setView('services')}
             className="hidden sm:flex items-center gap-1 text-sm font-semibold text-teal-600 hover:text-teal-700 cursor-pointer"
           >
-            See all 19 <ArrowRight size={14} />
+            See all 20 <ArrowRight size={14} />
           </button>
         </motion.div>
 
@@ -373,7 +373,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
             onClick={() => setView('services')}
             className="inline-flex items-center gap-2 px-6 py-3 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold rounded-xl transition-colors cursor-pointer"
           >
-            Browse All 19 Resources <ArrowRight size={16} />
+            Browse All 20 Resources <ArrowRight size={16} />
           </button>
         </div>
       </section>
