@@ -40,7 +40,6 @@ export default function PublicServices({ onSelectResource }: PublicServicesProps
         <p className="text-gray-500 text-lg">
           {RESOURCES.length} verified resources serving New Jersey communities. Click any resource to view full details, locations, and contact information.
         </p>
-        </p>
       </div>
 
       {/* Category filters */}
