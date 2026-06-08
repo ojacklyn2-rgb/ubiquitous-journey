@@ -301,7 +301,7 @@ export default function BlogPlatform({ selectedBlogId, setSelectedBlogId }: Blog
               ))}
             </div>
 
-            {filteredPosts.length === 0 && (
+            {BLOG_POSTS.length > 0 && filteredPosts.length === 0 && (
               <div className="text-center py-12 px-4 bg-white border border-brand-border rounded-3xl" id="blog-empty-pane">
                 <BookOpen className="w-10 h-10 text-brand-text-muted mx-auto mb-4" />
                 <h3 className="font-display font-medium text-lg text-brand-primary">No writing found matching filters.</h3>

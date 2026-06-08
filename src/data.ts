@@ -30,7 +30,7 @@ export const RESOURCES: Resource[] = [
     locations: [
       {
         address: '111 Howard Boulevard, Suite 104, Mount Arlington, NJ 07856',
-        mapQuery: '111+Howard+Boulevard+Suite+104+Mount+Arlington+NJ+07856',
+        mapQuery: '111+Howard+Blvd+Suite+104+Mount+Arlington+NJ+07856',
       }
     ],
   },
@@ -66,7 +66,7 @@ export const RESOURCES: Resource[] = [
     locations: [
       {
         address: '30 Silverline Drive, 2nd Floor, Suite 1, North Brunswick, NJ 08902',
-        mapQuery: '30+Silverline+Drive+North+Brunswick+NJ+08902',
+        mapQuery: '30+Silverline+Drive+2nd+Floor+Suite+1+North+Brunswick+NJ+08902',
       }
     ],
   },
@@ -84,7 +84,7 @@ export const RESOURCES: Resource[] = [
     locations: [
       {
         address: '1249 South River Road, Suite 301, Cranbury, NJ 08512',
-        mapQuery: '1249+South+River+Road+Suite+301+Cranbury+NJ+08512',
+        mapQuery: '1249+South+River+Rd+Suite+301+Cranbury+NJ+08512',
       }
     ],
   },
@@ -102,7 +102,7 @@ export const RESOURCES: Resource[] = [
     locations: [
       {
         address: '12D Quakerbridge Plaza, Mercerville, NJ 08619',
-        mapQuery: '12D+Quakerbridge+Plaza+Mercerville+NJ+08619',
+        mapQuery: '12D+Quakerbridge+Plaza+Hamilton+NJ+08619',
       }
     ],
   },
@@ -192,7 +192,7 @@ export const RESOURCES: Resource[] = [
     locations: [
       {
         address: '300 American Metro Blvd, Suite 170, Hamilton, NJ 08619',
-        mapQuery: '300+American+Metro+Blvd+Suite+170+Hamilton+NJ+08619',
+        mapQuery: '300+American+Metro+Boulevard+Suite+170+Hamilton+NJ+08619',
       }
     ],
   },
@@ -210,7 +210,7 @@ export const RESOURCES: Resource[] = [
     locations: [
       {
         address: '10A Oak Drive, Roosevelt Park, Edison, NJ 08837',
-        mapQuery: '10A+Oak+Drive+Edison+NJ+08837',
+        mapQuery: '10A+Oak+Drive+Roosevelt+Park+Edison+NJ+08837',
       }
     ],
   },
@@ -228,7 +228,7 @@ export const RESOURCES: Resource[] = [
     locations: [
       {
         address: '1 Penn Plaza East, 7th Floor, Newark, NJ 07105',
-        mapQuery: '1+Penn+Plaza+East+Newark+NJ+07105',
+        mapQuery: '1+Penn+Plaza+East+7th+Floor+Newark+NJ+07105',
       }
     ],
   },
@@ -275,7 +275,7 @@ export const RESOURCES: Resource[] = [
     locations: [
       {
         address: '2 East Blackwell Street, Suite 12, Dover, NJ 07801',
-        mapQuery: '2+East+Blackwell+Street+Dover+NJ+07801',
+        mapQuery: '2+East+Blackwell+St+Suite+12+Dover+NJ+07801',
       }
     ],
   },
