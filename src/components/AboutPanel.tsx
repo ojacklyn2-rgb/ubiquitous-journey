@@ -4,9 +4,19 @@ import { useState, FormEvent } from 'react';
 
 export default function AboutPanel() {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setLoading(true);
+    const form = e.currentTarget;
+    const data = new FormData(form);
+    await fetch('https://formspree.io/f/xlgkbgkw', {
+      method: 'POST',
+      body: data,
+      headers: { Accept: 'application/json' },
+    });
+    setLoading(false);
     setSubmitted(true);
   };
 
@@ -96,28 +106,28 @@ export default function AboutPanel() {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">First Name</label>
-                <input type="text" placeholder="Jane"
+                <input type="text" name="firstName" placeholder="Jane"
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition font-sans" />
               </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">Last Name</label>
-                <input type="text" placeholder="Doe"
+                <input type="text" name="lastName" placeholder="Doe"
                   className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition font-sans" />
               </div>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Email *</label>
-              <input type="email" required placeholder="jane@example.com"
+              <input type="email" name="email" required placeholder="jane@example.com"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition font-sans" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
-              <textarea rows={4} placeholder="How can I help you?"
+              <textarea rows={4} name="message" placeholder="How can I help you?"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition resize-none font-sans" />
             </div>
-            <button type="submit"
-              className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold px-6 py-3 rounded-xl transition-colors cursor-pointer">
-              Send Message <ArrowRight size={16} />
+            <button type="submit" disabled={loading}
+              className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-xl transition-colors cursor-pointer">
+              {loading ? 'Sending…' : 'Send Message'} <ArrowRight size={16} />
             </button>
           </form>
         ) : (
