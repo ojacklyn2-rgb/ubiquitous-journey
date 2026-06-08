@@ -9,7 +9,7 @@ interface DashboardHomeProps {
 }
 
 const AUDIENCE_CARDS = [
-  { category: 'Working Families' as const, icon: Users,         color: 'teal',   headline: 'Working Families', desc: 'Housing, TANF, childcare, food access, and health coverage for low-income households.' },
+  { category: 'Working Families' as const, icon: Users,         color: 'teal',   headline: 'Working Families', desc: 'Housing, TANF, childcare, food access, and health coverage for low-income households — including women and children.' },
   { category: 'Older Adults'     as const, icon: Heart,         color: 'blue',   headline: 'Older Adults',     desc: 'Medicare savings, prescription help, paratransit, and senior care navigation.' },
   { category: 'Uninsured'        as const, icon: ShieldOff,     color: 'orange', headline: 'Uninsured',        desc: 'Free clinics, Charity Care, community health centers, and sliding-scale services.' },
   { category: 'Disability'       as const, icon: Accessibility, color: 'purple', headline: 'Disability',       desc: 'Developmental services, adaptive transit, vocational support, and housing vouchers.' },
