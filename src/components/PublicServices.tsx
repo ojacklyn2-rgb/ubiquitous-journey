@@ -40,6 +40,7 @@ export default function PublicServices({ onSelectResource }: PublicServicesProps
         <p className="text-gray-500 text-lg">
           {RESOURCES.length} verified resources serving New Jersey communities. Click any resource to view full details, locations, and contact information.
         </p>
+        </p>
       </div>
 
       {/* Category filters */}
@@ -91,7 +92,7 @@ export default function PublicServices({ onSelectResource }: PublicServicesProps
             <h2 className="font-display text-base font-bold text-gray-900 mb-1 group-hover:text-teal-700 transition-colors leading-snug">
               {resource.name}
             </h2>
-            <p className="text-sm text-gray-500 mb-4 line-clamp-2 leading-relaxed flex-grow">
+            <p className="text-base text-gray-500 mb-4 line-clamp-2 leading-relaxed flex-grow">
               {resource.subtitle}
             </p>
 
@@ -99,7 +100,7 @@ export default function PublicServices({ onSelectResource }: PublicServicesProps
             <div className="mb-4">
               <div className="flex flex-wrap gap-1">
                 {resource.services.slice(0, 3).map(s => (
-                  <span key={s} className="text-xs bg-gray-50 text-gray-600 border border-gray-100 px-2 py-0.5 rounded-md">
+                  <span key={s} className="text-sm bg-gray-50 text-gray-600 border border-gray-100 px-2 py-0.5 rounded-md">
                     {s}
                   </span>
                 ))}

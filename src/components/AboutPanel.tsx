@@ -37,7 +37,7 @@ export default function AboutPanel() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.15 }}
       >
-        <div className="space-y-6 text-gray-700 leading-relaxed text-[15.5px] font-sans">
+        <div className="space-y-6 text-gray-700 leading-relaxed text-[17px] font-sans">
           <p>
             Growing up in New Jersey and witnessing the realities of caregiving, healthcare navigation, and community health challenges firsthand shaped the foundation of this project. Personal experiences supporting family members and observing how factors such as mobility, financial strain, transportation, and access to care affect everyday life sparked a deeper interest in public health and preventative healthcare. Alongside academic experiences in health policy research and healthcare exposure, these experiences led to a growing interest in understanding how local systems, resources, and social conditions influence long-term wellbeing.
           </p>
@@ -74,7 +74,7 @@ export default function AboutPanel() {
           <div key={v.label} className="bg-teal-50 border border-teal-100 rounded-2xl p-6">
             <div className="w-2 h-2 rounded-full bg-teal-500 mb-3" />
             <h3 className="font-display font-bold text-gray-900 mb-1.5">{v.label}</h3>
-            <p className="text-sm text-gray-600 leading-relaxed font-sans">{v.desc}</p>
+            <p className="text-base text-gray-600 leading-relaxed font-sans">{v.desc}</p>
           </div>
         ))}
       </motion.div>
@@ -87,7 +87,7 @@ export default function AboutPanel() {
         className="bg-white rounded-3xl border border-gray-100 shadow-sm p-8 md:p-10"
       >
         <h2 className="font-display text-2xl font-bold text-gray-900 mb-1">Let's Work Together</h2>
-        <p className="text-gray-500 mb-8 text-sm leading-relaxed font-sans">
+        <p className="text-gray-500 mb-8 text-base leading-relaxed font-sans">
           Whether you're a community health worker, policymaker, or a resident with a resource to share — reach out.
         </p>
 
