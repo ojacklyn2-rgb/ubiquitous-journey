@@ -17,6 +17,22 @@ export const MEDICAL_SERVICES: MedicalService[] = [];
 
 export const RESOURCES: Resource[] = [
   {
+    id: 'apostles-house',
+    name: "Apostles' House",
+    subtitle: 'Supporting Newark families with emergency assistance, food access, and community care',
+    description: "Apostles' House is a community-based organization in Newark, NJ providing emergency assistance, food support, and wraparound services to working families and individuals in need. Located in the heart of Newark, they serve as a trusted neighborhood resource for those facing hardship.",
+    categories: ['Working Families'],
+    services: ['Emergency assistance', 'Food support', 'Community referrals', 'Family services'],
+    phone: '',
+    hours: 'Contact for hours',
+    locations: [
+      {
+        address: '24 Grant St, Newark, NJ 07104',
+        mapQuery: '24+Grant+St+Newark+NJ+07104',
+      }
+    ],
+  },
+  {
     id: 'child-and-family-resources',
     name: 'Child and Family Resources',
     subtitle: 'Connecting NJ families to child welfare, parenting support, and community services',
