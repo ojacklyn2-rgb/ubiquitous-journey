@@ -166,54 +166,54 @@ export default function BlogPlatform({ selectedBlogId, setSelectedBlogId }: Blog
             </p>
           </div>
 
-          {/* Search bar & Category filters */}
-          <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="p-6 bg-white border border-brand-border rounded-3xl shadow-sm space-y-6">
-              <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
-                
-                <div className="relative w-full md:max-w-sm">
-                  <Search className="absolute left-3 top-3 w-4 h-4 text-brand-text-muted" />
-                  <input
-                    type="text"
-                    value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
-                    placeholder="Search articles, tags, concepts..."
-                    className="w-full bg-brand-cream border border-brand-border focus:border-brand-teal pl-9 pr-4 py-2.5 rounded-xl text-xs font-semibold focus:outline-none transition-colors"
-                    id="blog-search-field"
-                  />
+          {/* Search bar & Category filters — only shown when posts exist */}
+          {BLOG_POSTS.length > 0 && (
+            <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <div className="p-6 bg-white border border-brand-border rounded-3xl shadow-sm space-y-6">
+                <div className="flex flex-col md:flex-row gap-4 items-center justify-between">
+                  <div className="relative w-full md:max-w-sm">
+                    <Search className="absolute left-3 top-3 w-4 h-4 text-brand-text-muted" />
+                    <input
+                      type="text"
+                      value={searchTerm}
+                      onChange={(e) => setSearchTerm(e.target.value)}
+                      placeholder="Search articles, tags, concepts..."
+                      className="w-full bg-brand-cream border border-brand-border focus:border-brand-teal pl-9 pr-4 py-2.5 rounded-xl text-xs font-semibold focus:outline-none transition-colors"
+                      id="blog-search-field"
+                    />
+                  </div>
+                  <div className="flex flex-wrap gap-1.5" id="blog-filters-row">
+                    {categories.map(c => (
+                      <button
+                        key={c}
+                        onClick={() => setSelectedCategory(c)}
+                        className={`px-3.5 py-1.5 rounded-lg text-xs font-medium cursor-pointer transition-all ${
+                          selectedCategory === c
+                            ? 'bg-brand-teal text-brand-cream shadow-sm'
+                            : 'bg-brand-sage/50 text-brand-text-sec hover:bg-brand-sage'
+                        }`}
+                        id={`blog-tab-${c.replace(/\s+/g, '-')}`}
+                      >
+                        {c === 'All' ? 'All Essays' : c}
+                      </button>
+                    ))}
+                  </div>
                 </div>
-
-                <div className="flex flex-wrap gap-1.5" id="blog-filters-row">
-                  {categories.map(c => (
-                    <button
-                      key={c}
-                      onClick={() => setSelectedCategory(c)}
-                      className={`px-3.5 py-1.5 rounded-lg text-xs font-medium cursor-pointer transition-all ${
-                        selectedCategory === c
-                          ? 'bg-brand-teal text-brand-cream shadow-sm'
-                          : 'bg-brand-sage/50 text-brand-text-sec hover:bg-brand-sage'
-                      }`}
-                      id={`blog-tab-${c.replace(/\s+/g, '-')}`}
-                    >
-                      {c === 'All' ? 'All Essays' : c}
-                    </button>
-                  ))}
-                </div>
-
               </div>
-            </div>
-          </section>
+            </section>
+          )}
 
           {/* Empty state when no blog posts exist */}
           {BLOG_POSTS.length === 0 && (
-            <div className="text-center py-20">
-              <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
-                <FileText size={28} className="text-teal-500" />
+            <div className="max-w-xl mx-auto text-center py-24 px-6">
+              <div className="w-20 h-20 bg-teal-50 rounded-3xl flex items-center justify-center mx-auto mb-6">
+                <FileText size={36} className="text-teal-500" />
               </div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-2">Blog Coming Soon</h2>
-              <p className="text-gray-500 max-w-md mx-auto">
-                Original articles on health equity, NJ policy, and community health are on the way. Check back soon.
+              <h2 className="text-2xl font-bold text-gray-900 mb-3">Coming Soon</h2>
+              <p className="text-gray-500 leading-relaxed">
+                Original essays on health equity, NJ policy, and community health are in progress. This space will feature long-form writing on the issues that shape wellbeing across New Jersey.
               </p>
+              <p className="text-sm text-teal-600 font-medium mt-4">Check back soon.</p>
             </div>
           )}
 
