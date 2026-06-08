@@ -1,10 +1,31 @@
-export type ViewType = 'home' | 'services' | 'blog' | 'about';
+export type ViewType = 'home' | 'services' | 'blog' | 'about' | 'resource-detail';
+
+export interface ResourceLocation {
+  label?: string;
+  address: string;
+  mapQuery: string; // URL-encoded address for Google Maps embed
+}
+
+export interface Resource {
+  id: string;
+  name: string;
+  subtitle: string;
+  description: string;
+  categories: Array<'Working Families' | 'Older Adults' | 'Uninsured' | 'Disability'>;
+  services: string[];
+  website: string;
+  phone: string;
+  email: string;
+  hours: string;
+  locations: ResourceLocation[];
+  isFeatured?: boolean;
+}
 
 export interface BlogPost {
   id: string;
   title: string;
   excerpt: string;
-  content: string; // Markdown supported
+  content: string;
   category: 'Health Equity' | 'Policy' | 'Community' | 'Personal' | 'Resources';
   readTime: string;
   date: string;
@@ -30,21 +51,6 @@ export interface MedicalService {
   verifiedDate: string;
   tags: string[];
   isFeatured?: boolean;
-}
-
-export interface ServiceSubmission {
-  name: string;
-  description: string;
-  category: string;
-  county: string;
-  city: string;
-  address: string;
-  phone: string;
-  website: string;
-  languages: string[];
-  eligibility: string;
-  cost: string;
-  submittedByEmail: string;
 }
 
 export interface FAQItem {

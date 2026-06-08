@@ -1,8 +1,8 @@
 import { BlogPost } from '../types';
 import { BLOG_POSTS } from '../data';
-import { 
-  BookOpen, Search, ArrowLeft, Calendar, User, Eye, 
-  Share2, MessageSquare, Clipboard, Send, CheckCircle2, Bookmark
+import {
+  BookOpen, Search, ArrowLeft, Calendar, Eye,
+  MessageSquare, Clipboard, Send, CheckCircle2, FileText
 } from 'lucide-react';
 import { useState, useEffect, FormEvent } from 'react';
 
@@ -204,8 +204,21 @@ export default function BlogPlatform({ selectedBlogId, setSelectedBlogId }: Blog
             </div>
           </section>
 
+          {/* Empty state when no blog posts exist */}
+          {BLOG_POSTS.length === 0 && (
+            <div className="text-center py-20">
+              <div className="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <FileText size={28} className="text-teal-500" />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Blog Coming Soon</h2>
+              <p className="text-gray-500 max-w-md mx-auto">
+                Original articles on health equity, NJ policy, and community health are on the way. Check back soon.
+              </p>
+            </div>
+          )}
+
           {/* Featured Post Banner Accent */}
-          {filteredPosts.length > 0 && searchTerm === '' && selectedCategory === 'All' && (
+          {BLOG_POSTS.length > 0 && filteredPosts.length > 0 && searchTerm === '' && selectedCategory === 'All' && (
             <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div 
                 onClick={() => handlePostSelect(filteredPosts[0])}

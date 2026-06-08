@@ -1,4 +1,4 @@
-import { BlogPost, MedicalService, FAQItem, TimelineEvent } from './types';
+import { BlogPost, MedicalService, Resource, FAQItem, TimelineEvent } from './types';
 
 export const COUNTIES = [
   'Atlantic', 'Bergen', 'Burlington', 'Camden', 'Cape May', 'Cumberland',
@@ -11,448 +11,364 @@ export const LANGUAGES = [
   'English', 'Spanish', 'Portuguese', 'Arabic', 'Hindi', 'Korean', 'Creole', 'Tagalog'
 ];
 
-export const BLOG_POSTS: BlogPost[] = [
+export const BLOG_POSTS: BlogPost[] = [];
+
+export const MEDICAL_SERVICES: MedicalService[] = [];
+
+export const RESOURCES: Resource[] = [
   {
-    id: 'maternal-health-deserts',
-    title: 'Maternal Health Deserts: Tackling the Disparities in South Jersey Counties',
-    excerpt: 'An in-depth analysis of prenatal care deficits in Cumberland and Salem counties, and how community birth doulas are stepping in to improve birth equity.',
-    readTime: '6 min read',
-    date: 'May 18, 2026',
-    author: 'Ojacklyn',
-    authorRole: 'Public Health Researcher & Founder',
-    category: 'Health Equity',
-    thumbnail: 'https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=800',
-    tags: ['Maternal Health', 'Health Disparities', 'South Jersey', 'Doula Care'],
-    content: `### The Stark Reality in Southern New Jersey
-
-In the state of New Jersey, which possesses some of the nation's most advanced academic medical centers, access to basic maternal healthcare remains highly unequal. In southern counties like Cumberland, Salem, and Gloucester, pregnant people often face massive obstacles just to secure a first prenatal visit. Large geographic areas in these regions function as **maternal health deserts**, lacking practicing obstetricians, high-risk birth services, or public transit links to regional hospitals.
-
-This deficit in maternal healthcare access contributes to stark racial and socioeconomic divides in maternal and infant outcomes. Black infants in New Jersey are sadly multiple times more likely to die in their first year of life than white infants, a statistic driven heavily by systemic neglect and unequal healthcare access.
-
----
-
-### What Makes a "Maternal Health Desert"?
-
-Several compounding factors create maternal care deserts in Southern NJ:
-
-1. **Provider Shortages**: Fewer practicing physicians choose to open clinics in low-income or rural rural zip codes, citing lower reimbursement rates and high overhead costs.
-2. **Transportation Barriers**: Public transit options between small communities in Salem County and neighboring major hospitals (such as Cooper University Hospital in Camden or Inspira Health in Vineland) are sparse, making keeping appointments a half-day trek.
-3. **Insurance Gaps**: Although NJ FamilyCare (Medicaid) covers pregnancy, the administrative hurdles of enrollment often mean low-income patients do not secure cover until their second trimester, delaying critical early diagnostic screenings.
-
----
-
-### Community Solutions: Doulas Leading the Way
-
-Despite these structural challenges, local public health workers and advocates are driving a quiet revolution. One of the most effective interventions has been the rise of **culturally matching community doulas**. Under New Jersey's progressive policies, Medicaid now covers doula services—non-clinical birth workers who provide continuous physical, emotional, and informational support to pregnant mothers before, during, and shortly after childbirth.
-
-Doulas do not replace doctors or midwives, but they act as critical advocates:
-- They help mothers navigate doctors' offices and understand their medical options.
-- They recognize warning signs of complications like preeclampsia early, urging mothers to seek immediate medical attention.
-- They reduce unnecessary C-sections and lower parental anxiety.
-
-Organizations like the **Southern New Jersey Perinatal Cooperative (SNJPC)** are working tirelesly to recruit, train, and support community doulas who reside directly in Cumberland and Salem counties. By integrating doula support directly into community health clinics, they are actively bridging the gap between underserved families and the clinical systems that often fail to hear them.
-
-> "A doula is not a luxury. In underserved counties, a doula can literally be a lifesaver, ensuring that every mother's voice is heard at the bedside." — *Ojacklyn*
-
-### Moving Forward
-
-To fully eliminate maternal health deserts, New Jersey must continue to invest in community-led initiatives, loosen transportation bottlenecks, and reward providers who set up services in rural and under-resourced zip codes. Health equity starts at birth, and ensuring that no child's life is compromised before it even begins is a moral and public health imperative that we must champion together.`
+    id: 'child-and-family-resources',
+    name: 'Child and Family Resources',
+    subtitle: 'Connecting NJ families to child welfare, parenting support, and community services',
+    description: 'Child and Family Resources connects New Jersey families to essential child welfare, parenting support programs, family counseling, and community referral services. They serve Morris County and surrounding areas with comprehensive family-centered support.',
+    categories: ['Working Families'],
+    services: ['Child welfare support', 'Parenting programs', 'Family counseling', 'Community referrals'],
+    website: 'https://cfrmorris.org/',
+    phone: '973-398-1730',
+    email: 'info@cfrmorris.org',
+    hours: 'Mon–Fri: 9:00am – 4:00pm | Wed: 7:00am – 7:00pm',
+    locations: [
+      {
+        address: '111 Howard Boulevard, Suite 104, Mount Arlington, NJ 07856',
+        mapQuery: '111+Howard+Boulevard+Suite+104+Mount+Arlington+NJ+07856',
+      }
+    ],
   },
   {
-    id: 'demystifying-medicaid-renewals',
-    title: 'Demystifying NJ FamilyCare: Safeguarding Your Health Coverage Post-Redetermination',
-    excerpt: 'Are you at risk of losing health coverage? Learn the essential steps to keep your NJ FamilyCare (Medicaid) active under the state’s ongoing review process.',
-    readTime: '5 min read',
-    date: 'April 12, 2026',
-    author: 'Ojacklyn',
-    authorRole: 'Public Health Researcher & Founder',
-    category: 'Policy',
-    thumbnail: 'https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=800',
-    tags: ['Medicaid', 'NJ FamilyCare', 'Health Policy', 'Insurance Access'],
-    content: `### Understanding the "Unwinding" of Medicaid
-
-During the COVID-19 Public Health Emergency, the federal government enacted a policy that prohibited states from disenrolling anyone from Medicaid (NJ FamilyCare in New Jersey), regardless of changes in income or household makeup. This continuous enrollment policy was a critical safety net, allowing millions to maintain reliable access to doctor visits, medications, and treatments without interruption.
-
-However, that emergency provision has ended. New Jersey is currently in the late stages of **Medicaid Redetermination** (or the "unwinding" process), which requires every single recipient of NJ FamilyCare to have their eligibility reviewed. 
-
-Sadly, thousands of New Jerseyans have already lost coverage. Alarmingly, the vast majority of those who lost Medicaid were cut off not because they no longer met income limits, but due to **procedural reasons**—such as renewal packets sent to outdated mail addresses, or simple form-filling oversights.
-
----
-
-### 3 Actionable Steps to Protect Your Coverage
-
-If you or a loved one relies on NJ FamilyCare, here is what you must do immediately:
-
-#### 1. Update Your Contact Information
-The single most common reason people lose coverage is that NJ FamilyCare has an old mailing address on file. Since renewal packets are sent via physical mail, a simple house move can cause you to miss your deadline.
-- Call NJ FamilyCare at **1-800-701-0710** (TTY: 1-800-701-0723) to confirm your current physical address, phone number, and email.
-- You can also update address details online at the official portal.
-
-#### 2. Check Your Mail Consistently
-Renewal cycles occur throughout the year. Watch out for a bright blue envelope marked **"NJ FamilyCare"** or **"State of New Jersey"**. Once received:
-- Read every page carefully.
-- Note the deadline (typically 30 days from the date of the notice).
-- complete and return the requested paperwork immediately, even if your income hasn't changed.
-
-#### 3. Complete Every Section and Attach Proof
-You are required to submit verification documents alongside your renewal. Common requirements include:
-- Paystubs or tax returns as proof of income.
-- Bank statements if requested.
-- Proof of residency (utility bills or rent agreements).
-
-Failing to attach these required proofs will result in your renewal being returned or rejected, leading to a gap in coverage.
-
----
-
-### What to Do If Your Coverage Was Terminated
-
-If you received a termination notice, do not panic, but act rapidly:
-
-- **Inside the 90-day grace period**: If you simply missed your renewal deadline but are still income-eligible, you can submit your packet up to 90 days late. If approved, NJ FamilyCare will retroactively cover the gap, ensuring old medical bills get paid.
-- **File an Appeal**: If you believe your Medicaid was terminated in error, you have the right to request a Fair Hearing within 20 days of the notice to continue receiving coverage while the issue is reviewed.
-- **Explore GetCoveredNJ**: If your income has risen above the limit, you will be referred to **GetCoveredNJ**, the state's official health insurance marketplace. Thanks to state and federal subsidies, many former Medicaid recipients qualify for premiums as low as $10/month.
-
-Keeping New Jersey healthy requires keeping New Jerseyans covered. Spread the word to neighbors, family, and community centers—don’t let a simple piece of paper stand between any resident and their right to high-quality healthcare.`
+    id: 'ocean-health-initiative',
+    name: 'Ocean Health Initiative',
+    subtitle: 'Delivering accessible public health programs and preventive care services',
+    description: 'Ocean Health Initiative delivers community-centered public health programs and preventive care services to residents of Ocean County. They focus on health education, wellness screenings, and connecting underserved residents to healthcare resources.',
+    categories: ['Working Families'],
+    services: ['Preventive care', 'Community health programs', 'Health education', 'Wellness screenings'],
+    website: 'https://ohinj.org/',
+    phone: '732-363-6655',
+    email: 'info@ohinj.org',
+    hours: 'Mon–Fri: 8:00am – 5:00pm',
+    locations: [
+      {
+        address: '101 Second Street, Lakewood, NJ 08701',
+        mapQuery: '101+Second+Street+Lakewood+NJ+08701',
+      }
+    ],
   },
   {
-    id: 'newarks-food-sovereignty',
-    title: "Newark’s Food Deserts: Reclaiming Sovereignty via Mobile Markets and Community Fridges",
-    excerpt: 'How hyper-local urban agriculture, community-operated refrigerators, and mobile pantries are bypassing commercial barriers to supply fresh, nutritious food directly to Newark residents.',
-    readTime: '5 min read',
-    date: 'March 29, 2026',
-    author: 'Ojacklyn',
-    authorRole: 'Public Health Researcher & Founder',
-    category: 'Community',
-    thumbnail: 'https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800',
-    tags: ['Food Justice', 'Newark', 'Urban Agriculture', 'Nutrition Access'],
-    content: `### Slices of Scarcity in the City of Newark
-
-For decades, many neighborhoods in Newark's South, West, and Central Wards have been labeled **food deserts**—geographic areas where access to fresh, affordable, and culturally appropriate food is severely limited. While fast food chains and corner bodegas packed with processed snacks are abundant, full-service supermarkets containing fresh produce, lean meats, and whole grains are scarce.
-
-For families without personal vehicles, getting high-quality groceries involves taking multiple buses, carrying heavy bags in the elements, or relying on expensive rideshares. In public health, we recognize that **nutrition is preventative medicine**. Without healthy food access, rates of chronic diseases like diabetes, hypertension, and cardiovascular ailments surge.
-
-But Newarkers aren't waiting for corporate supermarket chains to save them. Local advocates are championing **food sovereignty**—the right of communities to control their own food and agriculture systems.
-
----
-
-### The Innovations Feeding Newark
-
-Several highly innovative grassroots models are bypassing traditional retail challenges to feed community members:
-
-#### 1. Newark Community Fridges
-The idea is beautifully simple: "Take what you need, leave what you can." Located on neighborhood sidewalks and hosted by local homes or storefronts, these are household outdoor refrigerators plugged in and kept clean by local volunteers. 
-- **How they work**: Local restaurants, community gardens, and residents donate fresh surplus produce, milk, eggs, and groceries. 
-- **The Impact**: By operating 24/7 with zero registration, zero ID checks, and zero questions asked, community fridges preserve absolute dignity for those experiencing severe poverty or undocumented residents who fear signing state assistance logs.
-
-#### 2. Mobile Farmers Markets
-Traditional brick-and-mortar grocery stores have high rent and operating overhead. Mobile markets, like those operated by local non-profits, use retrofitted school buses or trucks to bring high-quality farm produce directly to senior housing complexes, schools, and neighborhood plazas.
-- These mobile units buy directly from Jersey farms.
-- They accept SNAP/EBT payments and participate in the **NJ Double Up Food Bucks** program, which matches SNAP dollars spent on fresh fruits and vegetables—making wholesome food 50% cheaper.
-
-#### 3. Urban Farms and Sovereign Soil
-From Newark's *Greater Newark Conservancy* to smaller vacant lot developments, residents are transforming brick ruins into rich soil. Community gardens are not just growing collards, tomatoes, and herbs; they are operating educational hubs where youths learn urban agriculture, food preparation, and local leadership.
-
----
-
-### How You Can Help Fuel the Movement
-
-Supporting local food access in Newark is a community effort. Here's how you can make a direct impact:
-
-- **Volunteer**: Help harvest urban farm plots, stock a local fridge, or pack food boxes at the Community FoodBank of NJ.
-- **Donate Fresh Produce**: If you have a backyard garden, donate your excess harvest to local pantries or fridges.
-- **Advocate**: Encourage local government to pass zoning laws that make it easier to launch urban agricultural plots and fund mobile fresh-food networks.
-
-Food is a basic human right. By moving away from corporate dependence and toward hyper-local, community-managed food infrastructure, Newark's underserved neighborhoods are modeling how public health can be built by the community, for the community.`
+    id: 'central-jersey-family-health-consortium',
+    name: 'Central Jersey Family Health Consortium',
+    subtitle: 'Offering affordable primary care, prenatal services, and family health programs',
+    description: 'Central Jersey Family Health Center offers affordable, high-quality primary care, prenatal services, pediatric care, and family health screenings to residents of Middlesex County and surrounding communities regardless of insurance status.',
+    categories: ['Working Families'],
+    services: ['Primary care', 'Prenatal services', 'Pediatric care', 'Family health screenings'],
+    website: 'https://cjfhc.org/',
+    phone: '732-937-5437',
+    email: 'info@cjfhc.org',
+    hours: 'Mon–Fri: 8:00am – 4:30pm',
+    locations: [
+      {
+        address: '30 Silverline Drive, 2nd Floor, Suite 1, North Brunswick, NJ 08902',
+        mapQuery: '30+Silverline+Drive+North+Brunswick+NJ+08902',
+      }
+    ],
   },
   {
-    id: 'community-health-workers',
-    title: 'Bridging the Linguistic and Cultural Chasm: The Lifesaving Role of Community Health Workers',
-    excerpt: 'Why clinical degrees aren’t always enough to establish trust, and how bilingual health advocates are helping immigrant populations in Hudson and Passaic counties navigate the medical system.',
-    readTime: '4 min read',
-    date: 'February 15, 2026',
-    author: 'Ojacklyn',
-    authorRole: 'Public Health Researcher & Founder',
-    category: 'Resources',
-    thumbnail: 'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=800',
-    tags: ['Community Health Workers', 'Cultural Humility', 'Hudson County', 'Language Access'],
-    content: `### The Barrier Beyond Medicine
-
-Our hospital corridors are filled with cutting-edge medical technologies and highly trained physicians. Yet, for an immigrant family in Union City or Paterson, those same sterile corridors can feel like a hostile territory. 
-
-When you don’t speak the language, don't understand the complex American insurance system, or have previous experiences of cultural discrimination, seeking medical care is often delayed until a condition escalates into a full-blown emergency.
-
-While translation lines and multilingual documents help, they cannot substitute for **implicit trust**. True communication requires cultural humility and shared lived experience. This is where **Community Health Workers (CHWs)** excel.
-
----
-
-### What Is a Community Health Worker?
-
-A CHW is a frontline public health professional who is a trusted member of, and has an unusually close understanding of, the community they serve. Crucially, CHWs are not typically doctors or nurses; instead, they are community members trained to serve as advocates:
-
-- **Linguistic Bridges**: They translate medical jargon into plain language and the specific regional dialects spoken in local homes.
-- **Resource Navigators**: They hold families' hands as they apply for Charity Care, complete lead abatement housing grants, or schedule vaccine clinics.
-- **Trust Builders**: They operate in spaces outside clinic walls—churches, bodegas, laundromats, and community festivals—bringing health education directly into everyday life.
-
----
-
-### Establishing Trust in Hudson & Passaic Counties
-
-In highly diverse regions like Hudson and Passaic counties, where Spanish, Arabic, Portuguese, and Haitian Creole are spoken in thousands of households, CHW health models are achieving unprecedented success.
-
-For example, during preventative cancer screening drives, clinics utilizing CHWs saw appointment attendance rates jump significantly. Why? Because instead of a cold automated letter or robotic phone call, patients received a friendly, warm check-in from a peer who understood their home life, answered transportation anxieties, and calmed cultural fears about clinical diagnostic procedures.
-
-### Elevating the Profession
-
-For too long, CHW services were funded by temporary, unstable grants, leading to high turnover and gaps in community programs. New Jersey is changing this narrative. State health reform has created pathways for formal CHW certification and enabled direct Medicaid reimbursement for their vital services.
-
-By professionalizing and stably funding these roles, New Jersey is acknowledging a fundamental truth in public health: **the most powerful health interventions don’t always come on a prescription pad. Often, they come in the form of a trusted neighbor listening to your concerns and walking with you to care.**`
-  }
-];
-
-export const MEDICAL_SERVICES: MedicalService[] = [
-  // Primary Care
+    id: 'affordable-homes-new-jersey',
+    name: 'Affordable Homes New Jersey',
+    subtitle: 'Helping low- and moderate-income individuals and families access safe housing',
+    description: 'Affordable Homes New Jersey helps low- and moderate-income individuals and families access safe, stable affordable housing through placement services, homeownership counseling, rental assistance, and housing advocacy programs.',
+    categories: ['Working Families'],
+    services: ['Affordable housing placement', 'Homeownership counseling', 'Rental assistance', 'Housing advocacy'],
+    website: 'https://www.affordablehomesnewjersey.com/',
+    phone: '609-664-2769',
+    email: 'homes@cgph.net',
+    hours: 'Mon–Fri: 8:30am – 5:00pm',
+    locations: [
+      {
+        address: '1249 South River Road, Suite 301, Cranbury, NJ 08512',
+        mapQuery: '1249+South+River+Road+Suite+301+Cranbury+NJ+08512',
+      }
+    ],
+  },
+  {
+    id: 'pace-nj',
+    name: 'Program of All-Inclusive Care for the Elderly (PACE)',
+    subtitle: 'Providing comprehensive medical and social services to older adults',
+    description: 'The Program of All-Inclusive Care for the Elderly (PACE) provides comprehensive medical care coordination, physical therapy, prescription coverage, and social services to older adults who need nursing-home-level care but wish to remain in the community.',
+    categories: ['Older Adults'],
+    services: ['Medical care coordination', 'Physical therapy', 'Prescription coverage', 'Social services'],
+    website: 'https://www.cms.gov/medicare/medicaid-coordination/about/pace',
+    phone: '609-588-5960',
+    email: 'doas@dhs.nj.gov',
+    hours: 'Mon–Fri: 8:00am – 5:00pm',
+    locations: [
+      {
+        address: '12D Quakerbridge Plaza, Mercerville, NJ 08619',
+        mapQuery: '12D+Quakerbridge+Plaza+Mercerville+NJ+08619',
+      }
+    ],
+  },
+  {
+    id: 'nj-charity-care',
+    name: 'New Jersey Charity Care',
+    subtitle: 'Assisting uninsured and underinsured NJ residents with free or reduced hospital care',
+    description: 'New Jersey Charity Care assists uninsured and underinsured New Jersey residents in accessing free or reduced-cost hospital care through financial assistance applications. The program covers emergency care, inpatient, and outpatient hospital services.',
+    categories: ['Uninsured'],
+    services: ['Free hospital care', 'Reduced-cost medical services', 'Financial assistance applications'],
+    website: 'https://www.nj.gov/health/hcf/charity-care/overview/',
+    phone: '609-292-7837',
+    email: 'njcharitycare@doh.nj.gov',
+    hours: 'Varies by facility',
+    locations: [
+      {
+        address: '55 North Willow Street, Trenton, NJ 08618',
+        mapQuery: '55+North+Willow+Street+Trenton+NJ+08618',
+      }
+    ],
+  },
   {
     id: 'newark-community-health-centers',
-    name: 'Newark Community Health Centers (NCHC)',
-    description: 'A Federally Qualified Health Center (FQHC) offering comprehensive primary medical, pediatric, dental, and behavioral healthcare regardless of insurance status or ability to pay. Services are billed on an accommodating sliding scale.',
-    category: 'Primary Care',
-    county: 'Essex',
-    city: 'Newark',
-    address: '741 Broadway, Newark, NJ 07104',
+    name: 'Newark Community Health Centers, Inc.',
+    subtitle: 'Providing community-centered primary care, behavioral health, and wellness services',
+    description: 'Newark Community Health Centers provides comprehensive community-centered primary care, behavioral health, dental services, HIV/AIDS care, and substance use treatment to Newark residents regardless of ability to pay.',
+    categories: ['Uninsured'],
+    services: ['Primary care', 'Behavioral health', 'Dental services', 'HIV/AIDS care', 'Substance use treatment'],
+    website: 'https://www.nchcfqhc.org/',
     phone: '973-483-1300',
-    website: 'https://nchcsec.org',
-    languages: ['English', 'Spanish', 'Portuguese', 'Creole'],
-    eligibility: 'Open to all NJ residents. Uninsured, underinsured, and Medicaid/NJ FamilyCare patients are highly welcome.',
-    cost: 'Sliding Scale',
-    verifiedDate: 'April 2026',
-    tags: ['FQHC', 'Pediatrics', 'Dental', 'Sliding Scale', 'Newark'],
-    isFeatured: true
+    email: 'info@nchcfqhc.org',
+    hours: 'Mon–Fri: 9:00am – 7:00pm | Sat: 9:00am – 4:00pm (1st & 3rd Saturday only)',
+    locations: [
+      {
+        address: '741 Broadway, Newark, NJ 07104',
+        mapQuery: '741+Broadway+Newark+NJ+07104',
+      }
+    ],
   },
   {
-    id: 'zufall-health-dover',
-    name: 'Zufall Health Center',
-    description: 'A premier award-winning community health center providing high-quality, bilingual primary medical care, dental treatment, and support services to agricultural workers, the uninsured, and underserved communities.',
-    category: 'Primary Care',
-    county: 'Morris',
-    city: 'Dover',
-    address: '18 W. Blackwell St, Dover, NJ 07801',
-    phone: '973-328-3344',
-    website: 'https://www.zufallhealth.org',
-    languages: ['English', 'Spanish'],
-    eligibility: 'All income levels. Accepts Medicaid, Medicare, and private insurance. Uninsured patients are billed based on income.',
-    cost: 'Sliding Scale',
-    verifiedDate: 'March 2026',
-    tags: ['FQHC', 'Bilingual', 'Morris County', 'Primary Care']
+    id: 'njsave',
+    name: 'NJSave',
+    subtitle: 'Helping older adults and individuals with disabilities apply for prescription and utility assistance',
+    description: 'NJSave helps older adults and individuals with disabilities apply for multiple benefit programs including prescription assistance, utility bill help, Medicare savings programs, and healthcare cost reduction — all through one application.',
+    categories: ['Older Adults', 'Disability', 'Uninsured', 'Working Families'],
+    services: ['Prescription assistance', 'Utility bill help', 'Medicare savings', 'Healthcare cost reduction'],
+    website: 'https://www.nj.gov/humanservices/doas/services/l-p/njsave/',
+    phone: '1-800-792-8820',
+    email: 'njsave@dhs.nj.gov',
+    hours: '24/7',
+    locations: [
+      {
+        address: '222 South Warren Street, Trenton, NJ 08625',
+        mapQuery: '222+South+Warren+Street+Trenton+NJ+08625',
+      }
+    ],
   },
   {
-    id: 'chandler-health-center',
-    name: 'Eric B. Chandler Health Center',
-    description: 'An expert comprehensive FQHC operated jointly by Rutgers Robert Wood Johnson Medical School and the community. Providing pediatrics, internal medicine, OB/GYN, and dental care with strong language accessibility.',
-    category: 'Primary Care',
-    county: 'Middlesex',
-    city: 'New Brunswick',
-    address: '277 George St, New Brunswick, NJ 08901',
-    phone: '732-235-6700',
-    website: 'https://rwjms.rutgers.edu/chandler',
-    languages: ['English', 'Spanish', 'Hindi', 'Arabic'],
-    eligibility: 'Open to all. Focuses on low-income, uninsured residents of New Brunswick and surrounding towns.',
-    cost: 'Sliding Scale',
-    verifiedDate: 'May 2026',
-    tags: ['FQHC', 'Rutgers', 'Middlesex County', 'Women\'s Health']
-  },
-
-  // Mental Health
-  {
-    id: 'nj-mental-health-cares',
-    name: 'NJ Mental Health Cares Helpline',
-    description: 'New Jersey’s primary mental health information and referral service. Staffed by trained, experienced behavioral health specialists helping callers navigate outpatient therapy, local clinics, and crisis options.',
-    category: 'Mental Health',
-    county: 'Passaic', // Statewide but registered here
-    city: 'Statewide Helpline',
-    address: 'Statewide Virtual Support',
-    phone: '1-866-202-4357',
-    website: 'https://www.njmentalhealthcares.org',
-    languages: ['English', 'Spanish', 'Language Line Translation available'],
-    eligibility: 'Free and open to any New Jersey resident seeking emotional support or local referrals.',
-    cost: 'Free',
-    verifiedDate: 'June 2026',
-    tags: ['Crisis support', 'Helpline', 'Statewide', 'Free Counsel', '24/7'],
-    isFeatured: true
+    id: 'nj211',
+    name: 'NJ 2-1-1',
+    subtitle: 'A free, confidential helpline connecting NJ residents to health and human services',
+    description: 'NJ 2-1-1 is a free, confidential helpline and online directory connecting New Jersey residents to health, housing, food, mental health, crisis support, and social service resources 24 hours a day, 7 days a week.',
+    categories: ['Working Families', 'Uninsured', 'Older Adults', 'Disability'],
+    services: ['Crisis support', 'Social service referrals', 'Housing assistance', 'Food resources', 'Mental health referrals'],
+    website: 'https://nj211.org/',
+    phone: 'Dial 2-1-1',
+    email: 'info@nj211.org',
+    hours: '24/7',
+    locations: [
+      {
+        address: '16 Wing Drive, Suite 201, Cedar Knolls, NJ 07927',
+        mapQuery: '16+Wing+Drive+Suite+201+Cedar+Knolls+NJ+07927',
+      }
+    ],
   },
   {
-    id: 'integrity-house-behavioral',
-    name: 'Integrity House Outpatient Mental Health',
-    description: 'Provides highly structured mental health counseling, psychiatric evaluations, and medication management alongside treatment for co-occurring disorders in a highly supportive, therapeutic community setting.',
-    category: 'Mental Health',
-    county: 'Hudson',
-    city: 'Secaucus',
-    address: '1035 Secaucus Rd, Secaucus, NJ 07094',
-    phone: '201-583-5600',
-    website: 'https://integrityhouse.org',
-    languages: ['English', 'Spanish'],
-    eligibility: 'Adults requiring mental health counseling or recovery services. Medicaid and uninsured individuals are fast-tracked.',
-    cost: 'Medicaid/NJ FamilyCare',
-    verifiedDate: 'January 2026',
-    tags: ['Counseling', 'Medication Management', 'Hudson County', 'Substance Use']
-  },
-
-  // Food Access
-  {
-    id: 'cfbnj-distribution',
-    name: 'Community FoodBank of New Jersey',
-    description: 'The state’s largest food charity. Operates major food pantries, mobile food trucks, and resources matching for families to sign up for SNAP benefit programs directly in their local neighborhoods.',
-    category: 'Food Access',
-    county: 'Union',
-    city: 'Hillside',
-    address: '31 Evans Terminal, Hillside, NJ 07205',
-    phone: '908-355-3663',
-    website: 'https://cfbnj.org',
-    languages: ['English', 'Spanish', 'Portuguese'],
-    eligibility: 'Any resident experiencing food insecurity. Emergency pantry requires simple registration (no ID required).',
-    cost: 'Free',
-    verifiedDate: 'May 2026',
-    tags: ['Food Pantry', 'SNAP Help', 'Union County', 'Emergency Food'],
-    isFeatured: true
+    id: 'nj-family-care',
+    name: 'NJ FamilyCare',
+    subtitle: "New Jersey's Medicaid and CHIP program providing free or low-cost health coverage",
+    description: "NJ FamilyCare is New Jersey's Medicaid and Children's Health Insurance Program (CHIP) providing free or low-cost health insurance, Medicaid enrollment, and prescription benefits to qualifying NJ residents including children, families, pregnant women, and adults.",
+    categories: ['Working Families'],
+    services: ['Free health insurance', 'Medicaid enrollment', 'CHIP coverage', 'Prescription benefits'],
+    website: 'https://njfamilycare.dhs.state.nj.us/',
+    phone: '1-800-701-0710',
+    email: 'njfamilycare@dhs.nj.gov',
+    hours: 'Mon & Thu: 8:00am – 8:00pm | Tue, Wed, Fri: 8:00am – 5:00pm',
+    locations: [
+      {
+        address: '300 American Metro Blvd, Suite 170, Hamilton, NJ 08619',
+        mapQuery: '300+American+Metro+Blvd+Suite+170+Hamilton+NJ+08619',
+      }
+    ],
   },
   {
-    id: 'manna-from-heaven-camden',
-    name: 'Camden Food Security Network (Manna Pantry)',
-    description: 'A neighborhood food distribution center aimed at tackling severe food deserts in the City of Camden. Provides fresh produce bags, infant formula, and staple canned items weekly.',
-    category: 'Food Access',
-    county: 'Camden',
-    city: 'Camden',
-    address: '1423 Haddon Ave, Camden, NJ 08103',
-    phone: '856-555-0144',
-    website: 'https://www.camdenfoodsecurity.org',
-    languages: ['English', 'Spanish'],
-    eligibility: 'Camden residents. Families are eligible for one full food basket assignment weekly.',
-    cost: 'Free',
-    verifiedDate: 'February 2026',
-    tags: ['Food Pantry', 'Nutrition', 'Camden County', 'Weekly Baskets']
-  },
-
-  // Housing
-  {
-    id: 'bridges-outreach-homeless',
-    name: 'Bridges Outreach & Housing Center',
-    description: 'Empowers homeless and unstable individuals to move from street vulnerability into secure, permanent housing. Offers daily case management, shower facilities, mailing address services, and housing placement assistance.',
-    category: 'Housing',
-    county: 'Essex',
-    city: 'Newark',
-    address: '350 Lafayette St, Newark, NJ 07105',
-    phone: '973-685-4006',
-    website: 'https://bridgesoutreach.org',
-    languages: ['English', 'Spanish'],
-    eligibility: 'Individuals and families experiencing actual homelessness, eviction threats, or extreme housing insecurity.',
-    cost: 'Free',
-    verifiedDate: 'April 2026',
-    tags: ['Homelessness', 'Eviction Help', 'Essex County', 'Active Case Care']
+    id: 'nj-institute-for-disabilities',
+    name: 'New Jersey Institute for Disabilities',
+    subtitle: 'Offering educational, therapeutic, and community integration services for individuals with disabilities',
+    description: 'The New Jersey Institute for Disabilities offers educational, therapeutic, and community integration services for individuals with developmental and physical disabilities, supporting independent living and quality of life.',
+    categories: ['Disability'],
+    services: ['Educational services', 'Therapeutic support', 'Community integration', 'Developmental disability programs'],
+    website: 'https://www.njid.org/',
+    phone: '732-246-2525',
+    email: 'info@njid.org',
+    hours: 'Mon–Fri: 8:00am – 5:00pm',
+    locations: [
+      {
+        address: '10A Oak Drive, Roosevelt Park, Edison, NJ 08837',
+        mapQuery: '10A+Oak+Drive+Edison+NJ+08837',
+      }
+    ],
   },
   {
-    id: 'covenant-house-nj',
-    name: 'Covenant House New Jersey (Youth Shelter)',
-    description: 'A dedicated housing and emergency shelter resource for youth and young adults aged 18-21 who are experiencing homelessness or fleeing unsafe situations. Provides 24/7 safe shelter, medical care, and vocational training.',
-    category: 'Housing',
-    county: 'Hudson',
-    city: 'Jersey City',
-    address: '797 West Side Ave, Jersey City, NJ 07306',
-    phone: '201-332-9400',
-    website: 'https://covenanthousenj.org',
-    languages: ['English', 'Spanish', 'Creole'],
-    eligibility: 'Homeless young adults aged 18 to 21.',
-    cost: 'Free',
-    verifiedDate: 'May 2026',
-    tags: ['Youth Services', 'Shelter', 'Crisis Housing', 'Hudson County']
-  },
-
-  // Substance Use
-  {
-    id: 'nj-connect-recovery',
-    name: 'NJ Connect for Recovery Support Line',
-    description: 'An innovative statewide phone resource designed specifically to provide dedicated, non-judgmental guidance for individuals dealing with substance use disorder and their concerned family members.',
-    category: 'Substance Use',
-    county: 'Atlantic', // Registered county, helpline service
-    city: 'Statewide Helpline',
-    address: 'Statewide Outpatient Helpline',
-    phone: '1-855-652-3737',
-    website: 'https://www.njconnectforrecovery.org',
-    languages: ['English', 'Spanish', 'All languages via instant translation'],
-    eligibility: 'Free and confidential to anyone living in New Jersey seeking guidance on addiction treatment.',
-    cost: 'Free',
-    verifiedDate: 'May 2026',
-    tags: ['Addiction Help', 'Statewide Help', 'Harm Reduction', 'Substance Use']
-  },
-
-  // Women's Health
-  {
-    id: 'snjpc-maternal-outreach',
-    name: 'Southern New Jersey Perinatal Cooperative',
-    description: 'An exceptional community coalition focusing on healthy birth outcomes in South Jersey. Coordinates the local Community Doula Program, maternal depression support lines, and home nurse visit programs.',
-    category: 'Women\'s Health',
-    county: 'Cumberland',
-    city: 'Vineland',
-    address: '1370 Maple Ave, Vineland, NJ 08360',
-    phone: '856-431-3100',
-    website: 'https://www.snjpc.org',
-    languages: ['English', 'Spanish'],
-    eligibility: 'Pregnant and parenting families in Southern NJ counties. Free home visiting is offered based on local indicators.',
-    cost: 'Free',
-    verifiedDate: 'May 2026',
-    tags: ['Prenatal care', 'Maternal health', 'Cumberland County', 'Doula Support'],
-    isFeatured: true
-  },
-
-  // Children & Family
-  {
-    id: 'highlands-family-success',
-    name: 'Highlands Family Success Center',
-    description: 'A friendly community-based neighborhood gathering place that connects local families to practical services. Offers parenting workshops, budget workshops, children’s activities, and health benefits enrollment assistance.',
-    category: 'Children & Family',
-    county: 'Passaic',
-    city: 'West Milford',
-    address: '1807 Union Valley Rd, West Milford, NJ 07480',
-    phone: '973-506-6575',
-    website: 'https://highlandsfsc.org',
-    languages: ['English', 'Spanish'],
-    eligibility: 'Open to all families residing in Passaic County and Highlands areas. No fees or strict intake requirements.',
-    cost: 'Free',
-    verifiedDate: 'April 2026',
-    tags: ['Family support', 'Passaic County', 'Activities', 'Youth Help']
-  },
-
-  // Dental & Vision
-  {
-    id: 'rutgers-dental-medicine-clinic',
-    name: 'Rutgers School of Dental Medicine Clinics',
-    description: 'One of New Jersey’s largest low-cost dental diagnostic and care facilities. Under supervision by licensed faculty, dental students provide world-class standard and specialty oral clinical care at greatly reduced rates.',
-    category: 'Dental',
-    county: 'Essex',
-    city: 'Newark',
-    address: '110 Bergen St, Newark, NJ 07103',
-    phone: '973-972-4242',
-    website: 'https://sdm.rutgers.edu/patients',
-    languages: ['English', 'Spanish', 'Portuguese'],
-    eligibility: 'Open to all patients. Accepts Medicaid/NJ FamilyCare, and offers general dental and emergency options.',
-    cost: 'Low Cost',
-    verifiedDate: 'March 2026',
-    tags: ['Oral Health', 'Low Cost Dentistry', 'Essex County', 'Specialty Dental']
+    id: 'access-link-ada-paratransit',
+    name: 'Access Link ADA Paratransit',
+    subtitle: 'Providing accessible transportation services for individuals with disabilities',
+    description: 'Access Link is NJ Transit\'s ADA paratransit service providing door-to-door transportation for individuals who are unable to use fixed-route public transportation due to a disability. Shared ride vehicles available statewide.',
+    categories: ['Older Adults', 'Disability'],
+    services: ['Door-to-door transportation', 'Trip scheduling', 'Shared ride vehicles', 'ADA certification'],
+    website: 'https://www.njtransit.com/accessibility/access-link-ada-paratransit',
+    phone: '973-491-4224',
+    email: 'ADACertification@njtransit.com',
+    hours: 'Mon–Fri: 8:30am – 5:00pm',
+    locations: [
+      {
+        address: '1 Penn Plaza East, 7th Floor, Newark, NJ 07105',
+        mapQuery: '1+Penn+Plaza+East+Newark+NJ+07105',
+      }
+    ],
   },
   {
-    id: 'lions-eye-clinic-nj',
-    name: 'NJ Lions Eye Research & Care Center',
-    description: 'Partners with regional hospitals to provide specialized, comprehensive pediatric and adult vision screening, treatment, and glaucoma diagnostics for low-income residents without alternative vision coverage.',
-    category: 'Vision',
-    county: 'Middlesex',
-    city: 'New Brunswick',
-    address: '125 Paterson St, New Brunswick, NJ 08901',
-    phone: '732-235-8100',
-    website: 'https://www.lionsclinicsnj.org',
-    languages: ['English', 'Spanish'],
-    eligibility: 'NJ residents with proof of low income and no existing Commercial Vision coverage plans.',
-    cost: 'Sliding Scale',
-    verifiedDate: 'May 2026',
-    tags: ['Lions Club', 'Vision Care', 'Middlesex County', 'Eye Exams']
-  }
+    id: 'central-jersey-medical-center',
+    name: 'Central Jersey Medical Center',
+    subtitle: 'Delivering quality medical care and health services to uninsured and underserved patients',
+    description: 'Central Jersey Medical Center provides quality medical care including emergency care, primary care, and specialty referrals to uninsured and underserved patients across multiple New Jersey locations in Newark, Carteret, and Perth Amboy.',
+    categories: ['Uninsured', 'Disability'],
+    services: ['Emergency care', 'Primary care', 'Uninsured patient services', 'Specialty referrals'],
+    website: 'https://www.cjmc.us/',
+    phone: '609-586-7900',
+    email: 'info@cjmc.us',
+    hours: 'Mon–Fri: 8:00am – 5:00pm',
+    locations: [
+      {
+        label: 'Newark',
+        address: '359 13th Ave, Newark, NJ 07103',
+        mapQuery: '359+13th+Ave+Newark+NJ+07103',
+      },
+      {
+        label: 'Carteret',
+        address: '1540 Roosevelt Ave, Carteret, NJ 07008',
+        mapQuery: '1540+Roosevelt+Ave+Carteret+NJ+07008',
+      },
+      {
+        label: 'Perth Amboy',
+        address: '275 Hobart St, Perth Amboy, NJ 08861',
+        mapQuery: '275+Hobart+St+Perth+Amboy+NJ+08861',
+      }
+    ],
+  },
+  {
+    id: 'housing-partnership-nj',
+    name: 'Housing Partnership NJ',
+    subtitle: 'Supporting affordable housing development and homeownership opportunities',
+    description: 'Housing Partnership NJ supports affordable housing development, homeownership programs, financial literacy, and foreclosure prevention services for working families, older adults, and individuals with disabilities across New Jersey.',
+    categories: ['Working Families', 'Disability', 'Older Adults'],
+    services: ['Affordable housing development', 'Homeownership programs', 'Financial literacy', 'Foreclosure prevention'],
+    website: 'https://www.housingpartnershipnj.org/',
+    phone: '732-389-2958',
+    email: 'info@housingpartnership.net',
+    hours: 'Mon–Fri: 8:00am – 5:00pm',
+    locations: [
+      {
+        address: '2 East Blackwell Street, Suite 12, Dover, NJ 07801',
+        mapQuery: '2+East+Blackwell+Street+Dover+NJ+07801',
+      }
+    ],
+  },
+  {
+    id: 'work-first-nj',
+    name: 'Work First New Jersey / TANF',
+    subtitle: 'Providing temporary financial assistance and employment support to low-income families',
+    description: 'Work First New Jersey provides temporary financial assistance and employment training, job placement support, and case management services to low-income families and individuals through the Temporary Assistance for Needy Families (TANF) program.',
+    categories: ['Working Families'],
+    services: ['Temporary financial assistance', 'Employment training', 'Job placement support', 'Case management'],
+    website: 'https://www.nj.gov/humanservices/wfnj/',
+    phone: '1-800-792-8720',
+    email: 'Apply at NJHelps.gov',
+    hours: 'Mon–Fri: 8:30am – 4:30pm',
+    locations: [
+      {
+        address: '6 Quakerbridge Plaza, Trenton, NJ 08625',
+        mapQuery: '6+Quakerbridge+Plaza+Trenton+NJ+08625',
+      }
+    ],
+  },
+  {
+    id: 'homefront-nj',
+    name: 'HomeFront NJ',
+    subtitle: 'Serving homeless and at-risk individuals and families with housing and support services',
+    description: 'HomeFront serves homeless and at-risk individuals and families in Mercer County with emergency shelter, transitional housing, childcare assistance, and self-sufficiency programs to help families achieve stable, permanent housing.',
+    categories: ['Working Families'],
+    services: ['Emergency shelter', 'Transitional housing', 'Childcare assistance', 'Self-sufficiency programs'],
+    website: 'https://www.homefrontnj.org/',
+    phone: '609-989-9417',
+    email: 'info@homefrontnj.org',
+    hours: 'Mon–Fri: 9:00am – 5:00pm',
+    locations: [
+      {
+        address: '1880 Princeton Avenue, Lawrenceville, NJ 08648',
+        mapQuery: '1880+Princeton+Avenue+Lawrenceville+NJ+08648',
+      }
+    ],
+  },
+  {
+    id: 'monmouth-family-health-center',
+    name: 'Monmouth Family Health Center',
+    subtitle: 'Providing comprehensive primary care and preventive health services to all patients',
+    description: 'Monmouth Family Health Center provides comprehensive primary care, women\'s health, pediatrics, and chronic disease management to uninsured and underserved patients in Monmouth County regardless of ability to pay.',
+    categories: ['Uninsured', 'Disability', 'Working Families'],
+    services: ['Primary care', "Women's health", 'Pediatrics', 'Uninsured patient services', 'Chronic disease management'],
+    website: 'https://www.mfhcnj.org/',
+    phone: '732-870-5757',
+    email: 'info@mfhcnj.org',
+    hours: 'Mon, Wed, Fri: 8:00am – 5:30pm | Tue, Thu: 8:00am – 6:30pm | Sat: 8:00am – 4:00pm (1st & 3rd Saturday only)',
+    locations: [
+      {
+        address: '270 Broadway, Long Branch, NJ 07740',
+        mapQuery: '270+Broadway+Long+Branch+NJ+07740',
+      }
+    ],
+  },
+  {
+    id: 'atlantic-health-developmental-disability',
+    name: 'Atlantic Health Developmental Disability Centers',
+    subtitle: 'Offering specialized clinical care and support services for individuals with developmental disabilities',
+    description: 'Atlantic Health Developmental Disability Centers offers specialized clinical care, behavioral therapy, family support services, and community integration programs for individuals with developmental and intellectual disabilities in New Jersey.',
+    categories: ['Disability'],
+    services: ['Specialized clinical care', 'Behavioral therapy', 'Family support services', 'Community integration'],
+    website: 'https://ahs.atlantichealth.org/conditions-treatments/developmental-disabilities.html',
+    phone: '800-247-9580',
+    email: 'info@atlantichealth.org',
+    hours: 'Mon–Fri: 8:30am – 4:30pm',
+    locations: [
+      {
+        address: '475 South Street, Morristown, NJ 07960',
+        mapQuery: '475+South+Street+Morristown+NJ+07960',
+      }
+    ],
+  },
+  {
+    id: 'section-8-housing-voucher',
+    name: 'Section 8 Housing Choice Voucher',
+    subtitle: 'Assisting low-income families, elderly, and disabled individuals in affording private housing',
+    description: 'The Section 8 Housing Choice Voucher Program assists low-income families, elderly individuals, and persons with disabilities in affording safe, decent housing in the private market through rental assistance and landlord partnerships.',
+    categories: ['Disability', 'Working Families'],
+    services: ['Rental assistance', 'Housing placement', 'Landlord partnerships', 'Low-income eligibility'],
+    website: 'https://www.nj.gov/dca/dhcr/offices/vouchers.shtml',
+    phone: '1-800-654-6873',
+    email: 'dca@dca.nj.gov',
+    hours: 'Mon–Fri: 8:30am – 4:30pm',
+    locations: [
+      {
+        address: '101 South Broad Street, Trenton, NJ 08625',
+        mapQuery: '101+South+Broad+Street+Trenton+NJ+08625',
+      }
+    ],
+  },
 ];
 
 export const TIMELINE_EVENTS: TimelineEvent[] = [
@@ -460,7 +376,7 @@ export const TIMELINE_EVENTS: TimelineEvent[] = [
     year: '2020',
     title: 'Graduated: MPH in Epidemiology',
     subtitle: 'Rutgers School of Public Health',
-    description: 'Focused studies on social determinants of maternal and child health in New Jersey’s urban wards, documenting spatial disparities in healthcare access.'
+    description: 'Focused studies on social determinants of maternal and child health in New Jersey\'s urban wards, documenting spatial disparities in healthcare access.'
   },
   {
     year: '2022',

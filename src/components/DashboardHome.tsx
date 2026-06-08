@@ -73,38 +73,37 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
   return (
     <div className="space-y-12 py-6" id="dashboard-home-view">
       
-      {/* 1. Simplified Centered Hero Section */}
+      {/* 1. SEO-Optimized Hero Section */}
       <section className="max-w-4xl mx-auto px-4 text-center space-y-6">
         <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold font-mono tracking-wider text-brand-teal uppercase bg-brand-teal-light border border-brand-teal/10">
           New Jersey Public Health Resource
         </span>
         <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-brand-primary leading-[1.12]">
-          Bridging the gap between <span className="text-brand-teal">communities &amp; care.</span>
+          Free Health Resources for <span className="text-brand-teal">NJ Communities</span>
         </h1>
         <p className="text-base sm:text-lg text-brand-text-sec leading-relaxed max-w-2xl mx-auto">
-          An independent, manually vetted public health directory and research blog dedicated to simplifying healthcare access, elevating state health policy, and addressing health equity in underserved New Jersey neighborhoods.
+          Find verified public health services, housing support, and community resources — built for underserved communities across New Jersey.
         </p>
-        
+
         <div className="flex flex-col sm:flex-row gap-3 pt-2 justify-center">
           <button
             onClick={() => setView('services')}
             className="px-6 py-3.5 bg-brand-teal hover:bg-brand-accent text-brand-cream text-sm font-semibold rounded-xl shadow-md transition-all cursor-pointer flex items-center justify-center gap-2"
             id="hero-services-btn"
           >
-            Explore Services Directory
-            <ChevronRight className="w-4 h-4" />
+            Browse 19 Resources →
           </button>
           <button
-            onClick={() => setView('blog')}
+            onClick={() => setView('about')}
             className="px-6 py-3.5 border border-brand-border bg-white text-brand-text-main hover:border-brand-teal text-sm font-semibold rounded-xl shadow-sm transition-all cursor-pointer"
-            id="hero-blog-btn"
+            id="hero-about-btn"
           >
-            Read Research &amp; Essays
+            Our Story
           </button>
         </div>
-        
+
         <p className="text-xs font-mono text-brand-text-muted">
-          100% Free Access • No Registration Required • Manual Quarterly Auditing
+          19 Verified Resources · 4 Service Categories · 100% Free to Use
         </p>
       </section>
 
