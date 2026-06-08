@@ -60,6 +60,17 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           />
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="mb-5"
+        >
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium text-teal-700 bg-teal-50 border border-teal-200 font-sans">
+            New Jersey Public Health
+          </span>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
