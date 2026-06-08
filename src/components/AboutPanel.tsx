@@ -20,7 +20,7 @@ export default function AboutPanel() {
           style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '24px 24px' }}
         />
         <div className="relative z-10">
-          <span className="block text-xs font-mono font-semibold uppercase tracking-widest text-teal-300 mb-4">About This Platform</span>
+          <span className="block text-xs font-sans font-medium text-teal-300 mb-4">About This Platform</span>
           <h1 className="font-display text-4xl md:text-5xl font-bold leading-tight mb-4">The Full Story</h1>
           <div className="w-10 h-0.5 bg-teal-400 rounded-full" />
         </div>

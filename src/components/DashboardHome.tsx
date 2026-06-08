@@ -66,7 +66,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           transition={{ duration: 0.5 }}
           className="mb-5"
         >
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold tracking-wider text-teal-700 bg-teal-50 border border-teal-200 uppercase font-mono">
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium text-teal-700 bg-teal-50 border border-teal-200 font-sans">
             New Jersey Public Health
           </span>
         </motion.div>
@@ -130,7 +130,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           ].map((stat, i) => (
             <div key={i} className="py-2 md:py-0 px-4">
               <span className="block text-3xl font-extrabold text-teal-400">{stat.value}</span>
-              <span className="block text-xs font-mono uppercase tracking-wider text-gray-400 mt-1">{stat.label}</span>
+              <span className="block text-xs font-sans text-gray-400 mt-1">{stat.label}</span>
             </div>
           ))}
         </div>
@@ -146,7 +146,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           className="flex items-end justify-between mb-8"
         >
           <div>
-            <span className="block text-xs font-mono font-semibold uppercase tracking-widest text-teal-600 mb-2">From the Journal</span>
+            <span className="block text-xs font-sans font-medium text-teal-600 mb-2">From the Journal</span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Latest Writing</h2>
           </div>
           <button
@@ -169,7 +169,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
                 onClick={() => { setSelectedBlogId(post.id); setView('blog'); }}
                 className="card-lift text-left bg-white rounded-2xl border border-gray-100 p-6 flex flex-col gap-3 cursor-pointer"
               >
-                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-teal-600">{post.category}</span>
+                <span className="text-xs font-sans font-medium text-teal-600">{post.category}</span>
                 <h3 className="font-bold text-gray-900 text-lg leading-snug">{post.title}</h3>
                 <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed flex-grow">{post.excerpt}</p>
                 <div className="flex items-center gap-2 text-xs text-gray-400 pt-2 border-t border-gray-50">
@@ -193,7 +193,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
               {/* Left — text */}
               <div className="p-10 md:p-14 flex flex-col justify-between gap-8">
                 <div className="space-y-4">
-                  <span className="inline-block text-xs font-mono font-semibold uppercase tracking-widest text-teal-400">Public Health · NJ Policy · Community</span>
+                  <span className="inline-block text-xs font-sans font-medium text-teal-400">Public Health · NJ Policy · Community</span>
                   <p className="text-2xl md:text-3xl font-extrabold text-white leading-snug">
                     Essays on the everyday obstacles that shape health outcomes in New Jersey.
                   </p>
@@ -393,7 +393,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           />
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
             <div className="flex-1 space-y-4">
-              <span className="block text-xs font-mono font-semibold uppercase tracking-widest text-teal-300">About This Platform</span>
+              <span className="block text-xs font-sans font-medium text-teal-300">About This Platform</span>
               <h2 className="text-3xl font-extrabold leading-tight">
                 Built from lived experience<br className="hidden sm:block" /> in New Jersey.
               </h2>
