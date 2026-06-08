@@ -23,7 +23,7 @@ export const RESOURCES: Resource[] = [
     description: "Apostles' House is a community-based organization in Newark, NJ providing emergency assistance, food support, and wraparound services to working families and individuals in need. Located in the heart of Newark, they serve as a trusted neighborhood resource for those facing hardship.",
     categories: ['Working Families'],
     services: ['Emergency assistance', 'Food support', 'Community referrals', 'Family services'],
-    phone: '',
+    phone: '973-482-0625',
     hours: 'Contact for hours',
     locations: [
       {
