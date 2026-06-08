@@ -5,7 +5,7 @@ import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
-    base: '/ubiquitous-journey/',
+    base: process.env.VERCEL ? '/' : '/ubiquitous-journey/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
