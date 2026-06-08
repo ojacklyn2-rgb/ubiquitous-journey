@@ -136,6 +136,104 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
         </div>
       </section>
 
+      {/* ── Latest Writing ── */}
+      <section className="max-w-5xl mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="flex items-end justify-between mb-8"
+        >
+          <div>
+            <span className="block text-xs font-mono font-semibold uppercase tracking-widest text-teal-600 mb-2">From the Journal</span>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Latest Writing</h2>
+          </div>
+          <button
+            onClick={() => setView('blog')}
+            className="hidden sm:flex items-center gap-1 text-sm font-semibold text-teal-600 hover:text-teal-700 cursor-pointer"
+          >
+            {recentPosts.length > 0 ? 'All essays' : 'Visit blog'} <ArrowRight size={14} />
+          </button>
+        </motion.div>
+
+        {recentPosts.length > 0 ? (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {recentPosts.map((post, i) => (
+              <motion.button
+                key={post.id}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                onClick={() => { setSelectedBlogId(post.id); setView('blog'); }}
+                className="card-lift text-left bg-white rounded-2xl border border-gray-100 p-6 flex flex-col gap-3 cursor-pointer"
+              >
+                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-teal-600">{post.category}</span>
+                <h3 className="font-bold text-gray-900 text-lg leading-snug">{post.title}</h3>
+                <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed flex-grow">{post.excerpt}</p>
+                <div className="flex items-center gap-2 text-xs text-gray-400 pt-2 border-t border-gray-50">
+                  <Calendar size={12} />
+                  <span>{post.date}</span>
+                  <span className="mx-1">·</span>
+                  <span>{post.readTime}</span>
+                </div>
+              </motion.button>
+            ))}
+          </div>
+        ) : (
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="relative grain bg-gray-900 rounded-3xl overflow-hidden text-white"
+          >
+            <div className="grid md:grid-cols-2 gap-0">
+              {/* Left — text */}
+              <div className="p-10 md:p-14 flex flex-col justify-between gap-8">
+                <div className="space-y-4">
+                  <span className="inline-block text-xs font-mono font-semibold uppercase tracking-widest text-teal-400">Public Health · NJ Policy · Community</span>
+                  <p className="text-2xl md:text-3xl font-extrabold text-white leading-snug">
+                    Essays on the everyday obstacles that shape health outcomes in New Jersey.
+                  </p>
+                  <p className="text-gray-400 text-sm leading-relaxed">
+                    From maternal care deserts to Medicaid renewal gaps — written from the ground up, not from a think tank.
+                  </p>
+                </div>
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => setView('blog')}
+                    className="inline-flex items-center justify-center gap-2 bg-teal-500 hover:bg-teal-400 text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors cursor-pointer"
+                  >
+                    <BookOpen size={15} /> Go to Blog
+                  </button>
+                  <button
+                    onClick={() => setView('about')}
+                    className="inline-flex items-center justify-center gap-2 bg-white/10 hover:bg-white/20 text-white text-sm font-semibold px-6 py-3 rounded-xl transition-colors cursor-pointer"
+                  >
+                    My Story
+                  </button>
+                </div>
+              </div>
+              {/* Right — quote cards */}
+              <div className="hidden md:flex flex-col justify-center gap-4 p-10 border-l border-white/10">
+                {[
+                  { topic: 'Health Equity', preview: 'How transportation gaps in South Jersey quietly determine who gets care and who doesn\'t.' },
+                  { topic: 'NJ Policy',     preview: 'Breaking down Medicaid renewals — what the blue envelope means and why families miss it.' },
+                  { topic: 'Community',     preview: 'Newark\'s food sovereignty movement and the dignity embedded in every community fridge.' },
+                ].map((item) => (
+                  <div key={item.topic} className="bg-white/5 border border-white/10 rounded-xl px-5 py-4">
+                    <span className="block text-xs font-mono font-semibold text-teal-400 uppercase tracking-widest mb-1">{item.topic}</span>
+                    <p className="text-sm text-gray-300 leading-relaxed italic">{item.preview}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </section>
+
       {/* ── Who I Serve ── */}
       <section className="max-w-5xl mx-auto px-4">
         <motion.div
@@ -278,73 +376,6 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
             Browse All 19 Resources <ArrowRight size={16} />
           </button>
         </div>
-      </section>
-
-      {/* ── Latest Writing ── */}
-      <section className="max-w-5xl mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex items-end justify-between mb-8"
-        >
-          <div>
-            <span className="block text-xs font-mono font-semibold uppercase tracking-widest text-teal-600 mb-2">From the Journal</span>
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Latest Writing</h2>
-          </div>
-          {recentPosts.length > 0 && (
-            <button
-              onClick={() => setView('blog')}
-              className="hidden sm:flex items-center gap-1 text-sm font-semibold text-teal-600 hover:text-teal-700 cursor-pointer"
-            >
-              All essays <ArrowRight size={14} />
-            </button>
-          )}
-        </motion.div>
-
-        {recentPosts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-            {recentPosts.map((post, i) => (
-              <motion.button
-                key={post.id}
-                initial={{ opacity: 0, y: 16 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.08 }}
-                onClick={() => { setSelectedBlogId(post.id); setView('blog'); }}
-                className="card-lift text-left bg-white rounded-2xl border border-gray-100 p-6 flex flex-col gap-3 cursor-pointer"
-              >
-                <span className="text-xs font-mono font-semibold uppercase tracking-wider text-teal-600">{post.category}</span>
-                <h3 className="font-bold text-gray-900 text-lg leading-snug">{post.title}</h3>
-                <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed flex-grow">{post.excerpt}</p>
-                <div className="flex items-center gap-2 text-xs text-gray-400 pt-2 border-t border-gray-50">
-                  <Calendar size={12} />
-                  <span>{post.date}</span>
-                  <span className="mx-1">·</span>
-                  <span>{post.readTime}</span>
-                </div>
-              </motion.button>
-            ))}
-          </div>
-        ) : (
-          <div className="relative grain bg-gray-900 rounded-3xl overflow-hidden p-10 md:p-14 text-white">
-            <div className="relative z-10 max-w-xl">
-              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
-                Essays on health equity, NJ policy, maternal care deserts, and the everyday obstacles that shape wellbeing — written from the ground up, not from a think tank.
-              </p>
-              <p className="text-2xl font-bold text-white italic mb-6 leading-snug">
-                "Informed communities are better equipped to advocate for healthier, more equitable futures."
-              </p>
-              <button
-                onClick={() => setView('blog')}
-                className="inline-flex items-center gap-2 text-teal-400 hover:text-teal-300 text-sm font-semibold transition-colors cursor-pointer"
-              >
-                <BookOpen size={16} /> Writing coming soon
-              </button>
-            </div>
-          </div>
-        )}
       </section>
 
       {/* ── About Teaser ── */}
