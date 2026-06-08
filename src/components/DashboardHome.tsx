@@ -45,23 +45,18 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
     <div className="space-y-24 py-10" id="dashboard-home-view">
 
       {/* ── Hero ── */}
-      <section className="relative max-w-3xl mx-auto px-4 text-center overflow-visible">
-        {/* Animated background orbs */}
-        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden>
+      <section className="relative max-w-3xl mx-auto px-4 text-center">
+        {/* Animated background orbs — rendered outside section so no clipping */}
+        <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden>
           <motion.div
-            animate={{ scale: [1, 1.15, 1], opacity: [0.18, 0.28, 0.18] }}
+            animate={{ scale: [1, 1.15, 1], opacity: [0.14, 0.22, 0.14] }}
             transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute -top-16 -left-24 w-72 h-72 rounded-full bg-teal-200 blur-3xl"
+            className="absolute top-10 left-10 w-96 h-96 rounded-full bg-teal-200 blur-3xl"
           />
           <motion.div
-            animate={{ scale: [1, 1.2, 1], opacity: [0.12, 0.22, 0.12] }}
+            animate={{ scale: [1, 1.2, 1], opacity: [0.09, 0.18, 0.09] }}
             transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-            className="absolute -top-8 -right-20 w-64 h-64 rounded-full bg-emerald-200 blur-3xl"
-          />
-          <motion.div
-            animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.16, 0.08] }}
-            transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
-            className="absolute top-40 left-1/2 -translate-x-1/2 w-80 h-40 rounded-full bg-teal-100 blur-3xl"
+            className="absolute top-0 right-10 w-80 h-80 rounded-full bg-emerald-200 blur-3xl"
           />
         </div>
 
@@ -99,23 +94,25 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.38 }}
-          className="flex flex-col sm:flex-row gap-3 justify-center"
+          className="flex flex-col items-center gap-4"
         >
-          <button
-            onClick={() => setView('services')}
-            className="px-7 py-3.5 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
-          >
-            Browse 19 Resources <ArrowRight size={16} />
-          </button>
-          <button
-            onClick={() => setView('blog')}
-            className="px-7 py-3.5 border border-gray-200 bg-white text-gray-700 hover:border-teal-400 text-sm font-semibold rounded-xl shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
-          >
-            <BookOpen size={15} /> Read the Blog
-          </button>
+          <div className="flex flex-col sm:flex-row gap-3">
+            <button
+              onClick={() => setView('services')}
+              className="px-7 py-3.5 bg-teal-600 hover:bg-teal-700 text-white text-sm font-semibold rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              Resource Database <ArrowRight size={16} />
+            </button>
+            <button
+              onClick={() => setView('blog')}
+              className="px-7 py-3.5 bg-gray-900 hover:bg-gray-800 text-white text-sm font-semibold rounded-xl shadow-sm transition-all flex items-center justify-center gap-2 cursor-pointer"
+            >
+              <BookOpen size={15} /> Read the Blog
+            </button>
+          </div>
           <button
             onClick={() => setView('about')}
-            className="px-7 py-3.5 border border-gray-200 bg-white text-gray-700 hover:border-teal-400 text-sm font-semibold rounded-xl shadow-sm transition-all cursor-pointer"
+            className="text-sm text-gray-400 hover:text-teal-600 transition-colors cursor-pointer underline underline-offset-4"
           >
             My Story
           </button>
