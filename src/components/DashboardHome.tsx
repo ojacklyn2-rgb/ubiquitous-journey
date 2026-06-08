@@ -9,14 +9,14 @@ interface DashboardHomeProps {
 }
 
 const AUDIENCE_CARDS = [
-  { category: 'Working Families' as const, icon: Users,        color: 'teal',   headline: 'Working Families', desc: 'Housing, TANF, childcare, food access, and health coverage for low-income households.' },
-  { category: 'Older Adults'     as const, icon: Heart,        color: 'blue',   headline: 'Older Adults',     desc: 'Medicare savings, prescription help, paratransit, and senior care navigation.' },
-  { category: 'Uninsured'        as const, icon: ShieldOff,    color: 'orange', headline: 'Uninsured',        desc: 'Free clinics, Charity Care, community health centers, and sliding-scale services.' },
-  { category: 'Disability'       as const, icon: Accessibility,color: 'purple', headline: 'Disability',       desc: 'Developmental services, adaptive transit, vocational support, and housing vouchers.' },
+  { category: 'Working Families' as const, icon: Users,         color: 'teal',   headline: 'Working Families', desc: 'Housing, TANF, childcare, food access, and health coverage for low-income households.' },
+  { category: 'Older Adults'     as const, icon: Heart,         color: 'blue',   headline: 'Older Adults',     desc: 'Medicare savings, prescription help, paratransit, and senior care navigation.' },
+  { category: 'Uninsured'        as const, icon: ShieldOff,     color: 'orange', headline: 'Uninsured',        desc: 'Free clinics, Charity Care, community health centers, and sliding-scale services.' },
+  { category: 'Disability'       as const, icon: Accessibility, color: 'purple', headline: 'Disability',       desc: 'Developmental services, adaptive transit, vocational support, and housing vouchers.' },
 ];
 
 const HOW_IT_WORKS = [
-  { step: '01', title: 'Browse Resources',  desc: 'Filter 19 verified NJ organizations by who they serve.',              icon: Search    },
+  { step: '01', title: 'Browse Resources',  desc: 'Filter 19 verified NJ organizations by who they serve.',              icon: Search     },
   { step: '02', title: 'View Full Details', desc: 'Services, contact info, hours, and an interactive map per location.', icon: MapPin     },
   { step: '03', title: 'Get Connected',     desc: 'Call, visit the site, or get directions — no signup, no cost.',       icon: CheckCircle },
 ];
@@ -45,7 +45,26 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
     <div className="space-y-24 py-10" id="dashboard-home-view">
 
       {/* ── Hero ── */}
-      <section className="max-w-3xl mx-auto px-4 text-center">
+      <section className="relative max-w-3xl mx-auto px-4 text-center overflow-visible">
+        {/* Animated background orbs */}
+        <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden" aria-hidden>
+          <motion.div
+            animate={{ scale: [1, 1.15, 1], opacity: [0.18, 0.28, 0.18] }}
+            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute -top-16 -left-24 w-72 h-72 rounded-full bg-teal-200 blur-3xl"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.2, 1], opacity: [0.12, 0.22, 0.12] }}
+            transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+            className="absolute -top-8 -right-20 w-64 h-64 rounded-full bg-emerald-200 blur-3xl"
+          />
+          <motion.div
+            animate={{ scale: [1, 1.1, 1], opacity: [0.08, 0.16, 0.08] }}
+            transition={{ duration: 11, repeat: Infinity, ease: 'easeInOut', delay: 4 }}
+            className="absolute top-40 left-1/2 -translate-x-1/2 w-80 h-40 rounded-full bg-teal-100 blur-3xl"
+          />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -58,10 +77,10 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
         </motion.div>
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65, delay: 0.1 }}
-          className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 leading-[1.08] mb-6"
+          transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-gray-900 leading-[1.07] mb-6 tracking-tight"
         >
           Free Health Resources<br />
           for <span className="text-teal-600 accent-underline">NJ Communities</span>
@@ -70,8 +89,8 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.55, delay: 0.25 }}
-          className="text-lg text-gray-500 leading-relaxed max-w-xl mx-auto mb-8 font-sans"
+          transition={{ duration: 0.6, delay: 0.25 }}
+          className="text-lg text-gray-500 leading-relaxed max-w-xl mx-auto mb-8"
         >
           Verified public health services, housing support, and community resources — built for underserved communities across New Jersey.
         </motion.p>
@@ -89,10 +108,16 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
             Browse 19 Resources <ArrowRight size={16} />
           </button>
           <button
+            onClick={() => setView('blog')}
+            className="px-7 py-3.5 border border-gray-200 bg-white text-gray-700 hover:border-teal-400 text-sm font-semibold rounded-xl shadow-sm transition-all cursor-pointer flex items-center justify-center gap-2"
+          >
+            <BookOpen size={15} /> Read the Blog
+          </button>
+          <button
             onClick={() => setView('about')}
             className="px-7 py-3.5 border border-gray-200 bg-white text-gray-700 hover:border-teal-400 text-sm font-semibold rounded-xl shadow-sm transition-all cursor-pointer"
           >
-            Our Story
+            My Story
           </button>
         </motion.div>
       </section>
@@ -107,14 +132,14 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
             { value: '100%', label: 'Free to Use' },
           ].map((stat, i) => (
             <div key={i} className="py-2 md:py-0 px-4">
-              <span className="block font-display text-3xl font-bold text-teal-400">{stat.value}</span>
+              <span className="block text-3xl font-extrabold text-teal-400">{stat.value}</span>
               <span className="block text-xs font-mono uppercase tracking-wider text-gray-400 mt-1">{stat.label}</span>
             </div>
           ))}
         </div>
       </section>
 
-      {/* ── Who We Serve ── */}
+      {/* ── Who I Serve ── */}
       <section className="max-w-5xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -123,8 +148,8 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Who We Serve</h2>
-          <p className="text-gray-500 max-w-lg mx-auto text-sm leading-relaxed font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">Who I Serve</h2>
+          <p className="text-gray-500 max-w-lg mx-auto text-sm leading-relaxed">
             Every resource is organized around the people who need it most. Find your category and get directly to what applies to you.
           </p>
         </motion.div>
@@ -151,8 +176,8 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
                   <span className={`text-xs font-semibold ${c.badgeText} ${c.badge} px-2 py-0.5 rounded-full border ${c.border}`}>
                     {count} resources
                   </span>
-                  <h3 className="font-display font-bold text-gray-900 mt-2 mb-1 text-base">{card.headline}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed font-sans">{card.desc}</p>
+                  <h3 className="font-bold text-gray-900 mt-2 mb-1 text-base">{card.headline}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed">{card.desc}</p>
                 </div>
                 <span className={`text-xs font-semibold ${c.text} flex items-center gap-1 mt-auto`}>
                   View resources <ArrowRight size={12} />
@@ -172,8 +197,8 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           transition={{ duration: 0.5 }}
           className="text-center mb-10"
         >
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-3">How It Works</h2>
-          <p className="text-gray-500 max-w-md mx-auto text-sm leading-relaxed font-sans">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">How It Works</h2>
+          <p className="text-gray-500 max-w-md mx-auto text-sm leading-relaxed">
             No account. No form. Just a clear path to the help you need.
           </p>
         </motion.div>
@@ -190,12 +215,12 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="relative bg-white rounded-2xl border border-gray-100 p-7 shadow-sm overflow-hidden"
               >
-                <span className="font-display text-6xl font-bold text-gray-50 absolute top-4 right-5 select-none leading-none">{step.step}</span>
+                <span className="text-6xl font-black text-gray-50 absolute top-4 right-5 select-none leading-none">{step.step}</span>
                 <div className="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5 text-teal-600" />
                 </div>
-                <h3 className="font-display font-bold text-gray-900 mb-2">{step.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed font-sans">{step.desc}</p>
+                <h3 className="font-bold text-gray-900 mb-2">{step.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{step.desc}</p>
               </motion.div>
             );
           })}
@@ -212,8 +237,8 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           className="flex items-end justify-between mb-8"
         >
           <div>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900 mb-1">Highlighted Resources</h2>
-            <p className="text-sm text-gray-500 font-sans">A few of the organizations we've verified for NJ communities.</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-1">Highlighted Resources</h2>
+            <p className="text-sm text-gray-500">A few of the organizations I've verified for NJ communities.</p>
           </div>
           <button
             onClick={() => setView('services')}
@@ -238,9 +263,9 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
                   <span key={cat} className={`text-xs font-medium px-2 py-0.5 rounded-full border ${catColor(cat)}`}>{cat}</span>
                 ))}
               </div>
-              <h3 className="font-display font-bold text-gray-900 text-base leading-snug">{resource.name}</h3>
-              <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed flex-grow font-sans">{resource.subtitle}</p>
-              <div className="flex items-center gap-1 text-xs text-gray-400 pt-2 border-t border-gray-50 font-sans">
+              <h3 className="font-bold text-gray-900 text-base leading-snug">{resource.name}</h3>
+              <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed flex-grow">{resource.subtitle}</p>
+              <div className="flex items-center gap-1 text-xs text-gray-400 pt-2 border-t border-gray-50">
                 <MapPin size={12} />
                 <span>{resource.locations.length > 1 ? `${resource.locations.length} locations` : resource.locations[0]?.address.split(',').slice(-2).join(',').trim()}</span>
               </div>
@@ -269,7 +294,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
         >
           <div>
             <span className="block text-xs font-mono font-semibold uppercase tracking-widest text-teal-600 mb-2">From the Journal</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-gray-900">Latest Writing</h2>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900">Latest Writing</h2>
           </div>
           {recentPosts.length > 0 && (
             <button
@@ -294,9 +319,9 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
                 className="card-lift text-left bg-white rounded-2xl border border-gray-100 p-6 flex flex-col gap-3 cursor-pointer"
               >
                 <span className="text-xs font-mono font-semibold uppercase tracking-wider text-teal-600">{post.category}</span>
-                <h3 className="font-display font-bold text-gray-900 text-lg leading-snug">{post.title}</h3>
-                <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed font-sans flex-grow">{post.excerpt}</p>
-                <div className="flex items-center gap-2 text-xs text-gray-400 pt-2 border-t border-gray-50 font-sans">
+                <h3 className="font-bold text-gray-900 text-lg leading-snug">{post.title}</h3>
+                <p className="text-sm text-gray-500 line-clamp-2 leading-relaxed flex-grow">{post.excerpt}</p>
+                <div className="flex items-center gap-2 text-xs text-gray-400 pt-2 border-t border-gray-50">
                   <Calendar size={12} />
                   <span>{post.date}</span>
                   <span className="mx-1">·</span>
@@ -306,13 +331,12 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
             ))}
           </div>
         ) : (
-          /* Editorial coming-soon teaser — shown until first post is published */
           <div className="relative grain bg-gray-900 rounded-3xl overflow-hidden p-10 md:p-14 text-white">
             <div className="relative z-10 max-w-xl">
-              <p className="font-sans text-gray-400 text-sm mb-4 leading-relaxed">
+              <p className="text-gray-400 text-sm mb-4 leading-relaxed">
                 Essays on health equity, NJ policy, maternal care deserts, and the everyday obstacles that shape wellbeing — written from the ground up, not from a think tank.
               </p>
-              <p className="font-display text-2xl font-bold text-white italic mb-6">
+              <p className="text-2xl font-bold text-white italic mb-6 leading-snug">
                 "Informed communities are better equipped to advocate for healthier, more equitable futures."
               </p>
               <button
@@ -342,17 +366,17 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
             <div className="flex-1 space-y-4">
               <span className="block text-xs font-mono font-semibold uppercase tracking-widest text-teal-300">About This Platform</span>
-              <h2 className="font-display text-3xl font-bold leading-tight">
+              <h2 className="text-3xl font-extrabold leading-tight">
                 Built from lived experience<br className="hidden sm:block" /> in New Jersey.
               </h2>
-              <p className="text-teal-100 text-sm leading-relaxed max-w-md font-sans">
-                Growing up witnessing the realities of caregiving and healthcare navigation, this platform was built to make public health resources visible, accessible, and human.
+              <p className="text-teal-100 text-sm leading-relaxed max-w-md">
+                Growing up witnessing the realities of caregiving and healthcare navigation, I built this platform to make public health resources visible, accessible, and human.
               </p>
               <button
                 onClick={() => setView('about')}
                 className="inline-flex items-center gap-2 bg-white text-teal-800 font-semibold text-sm px-6 py-3 rounded-xl hover:bg-teal-50 transition-colors cursor-pointer"
               >
-                Read Our Story <ArrowRight size={15} />
+                My Story <ArrowRight size={15} />
               </button>
             </div>
             <div className="hidden md:flex flex-col gap-3 shrink-0">
@@ -361,7 +385,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
                 { icon: CheckCircle, text: 'Quarterly verified listings' },
                 { icon: MapPin,      text: 'All 21 NJ counties' },
               ].map(({ icon: Icon, text }) => (
-                <div key={text} className="flex items-center gap-3 bg-white/10 rounded-xl px-5 py-3 text-sm font-medium text-white font-sans">
+                <div key={text} className="flex items-center gap-3 bg-white/10 rounded-xl px-5 py-3 text-sm font-medium text-white">
                   <Icon size={16} className="text-teal-300 shrink-0" />
                   {text}
                 </div>

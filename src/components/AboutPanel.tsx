@@ -112,7 +112,7 @@ export default function AboutPanel() {
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
-              <textarea rows={4} placeholder="How can we work together?"
+              <textarea rows={4} placeholder="How can I help you?"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition resize-none font-sans" />
             </div>
             <button type="submit"
