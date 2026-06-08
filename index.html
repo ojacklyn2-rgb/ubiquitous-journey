@@ -1,312 +1,45 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ojacklyn — Public Health Access in NJ</title>
-  <link rel="stylesheet" href="css/main.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ojacklyn — Free Health Resources for NJ Communities</title>
+    <meta name="description" content="Find free public health services, housing support, and community resources for underserved communities across New Jersey. 19 verified resources covering healthcare, housing, transportation, and more." />
+    <meta name="keywords" content="NJ public health resources, New Jersey health services, free healthcare NJ, underserved communities NJ, NJ housing assistance, community health New Jersey, health equity NJ" />
+    <meta name="author" content="Ojacklyn" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://ojacklyn.com/" />
 
-<!-- ─── Navbar ─── -->
-<nav class="nav">
-  <div class="nav__inner">
-    <a href="index.html" class="nav__logo">
-      <div class="nav__logo-mark">
-        <svg viewBox="0 0 16 16"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 2a4 4 0 110 8A4 4 0 018 4z"/></svg>
-      </div>
-      Ojacklyn
-    </a>
-    <ul class="nav__links">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="public-services.html">Public Services</a></li>
-      <li><a href="about.html">About</a></li>
-    </ul>
-    <div class="nav__actions">
-      <a href="public-services.html" class="btn btn--teal btn--lg">Find a Service</a>
-    </div>
-    <button class="nav__hamburger" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Ojacklyn — Free Health Resources for NJ Communities" />
+    <meta property="og:description" content="Find free public health services, housing support, and community resources for underserved communities across New Jersey." />
+    <meta property="og:url" content="https://ojacklyn.com/" />
+    <meta property="og:site_name" content="Ojacklyn" />
 
-<!-- ─── Hero ─── -->
-<section class="hero">
-  <div class="hero__inner">
-    <span class="badge badge--teal">New Jersey Public Health</span>
-    <h1 class="hero__headline">
-      Bridging the gap between<br>communities &amp; care.
-    </h1>
-    <p class="hero__sub">
-      A personal blog and resource database dedicated to increasing public health access across New Jersey — one resource at a time.
-    </p>
-    <div class="hero__ctas">
-      <a href="public-services.html" class="btn btn--primary btn--xl">Explore Services</a>
-      <a href="blog.html" class="btn btn--outline btn--xl">Read the Blog</a>
-    </div>
-    <p class="hero__note">Free to access · No sign-up required</p>
-    <div class="hero__visual">
-      <div class="hero__visual-inner">
-        <div class="hero__visual-placeholder">
-          <svg viewBox="0 0 80 80" width="80" height="80" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="8" y="8" width="64" height="64" rx="8"/>
-            <path d="M8 28h64M28 28v44M52 28v44"/>
-            <circle cx="40" cy="18" r="4"/>
-          </svg>
-          <span>[ Site dashboard preview ]</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Ojacklyn — Free Health Resources for NJ Communities" />
+    <meta name="twitter:description" content="Find free public health services, housing support, and community resources for underserved communities across New Jersey." />
 
-<!-- ─── Stats ─── -->
-<div class="container" style="padding-top:0;padding-bottom:var(--section-y)">
-  <div class="stat-strip">
-    <div class="stat-strip__item">
-      <div class="stat-strip__number">—</div>
-      <div class="stat-strip__label">Resources indexed</div>
-    </div>
-    <div class="stat-strip__item">
-      <div class="stat-strip__number">21</div>
-      <div class="stat-strip__label">NJ counties covered</div>
-    </div>
-    <div class="stat-strip__item">
-      <div class="stat-strip__number">—</div>
-      <div class="stat-strip__label">Blog posts published</div>
-    </div>
-  </div>
-</div>
-
-<!-- ─── Feature Row 1 ─── -->
-<section style="background:var(--color-bg-secondary);padding:var(--section-y) 0;">
-  <div class="section">
-    <div class="feature-row">
-      <div class="feature-row__text">
-        <span class="badge badge--green">Resource Database</span>
-        <h3>Every service, one place.</h3>
-        <p>Browse a curated index of public health services — from free clinics and food pantries to mental health hotlines and housing assistance — organized by county and category.</p>
-        <a href="public-services.html" class="btn btn--primary">Browse Resources</a>
-      </div>
-      <div class="feature-row__visual">[ Resource map / grid preview ]</div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Feature Row 2 ─── -->
-<section style="padding:var(--section-y) 0;">
-  <div class="section">
-    <div class="feature-row feature-row--reverse">
-      <div class="feature-row__text">
-        <span class="badge badge--teal">Blog</span>
-        <h3>Perspectives that matter.</h3>
-        <p>Essays, explainers, and personal reflections at the intersection of public health, policy, and lived experience in New Jersey communities.</p>
-        <a href="blog.html" class="btn btn--outline">Read Articles</a>
-      </div>
-      <div class="feature-row__visual">[ Blog post preview ]</div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Featured Categories ─── -->
-<section style="background:var(--color-bg-secondary);padding:var(--section-y) 0;">
-  <div class="section">
-    <div class="section-header">
-      <span class="badge badge--blue">Categories</span>
-      <h2>What are you looking for?</h2>
-      <p>Navigate resources and articles by the topics that matter most to you and your community.</p>
-    </div>
-    <div class="grid-4">
-      <div class="card card--muted">
-        <div class="card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
-        <div class="card__title">Primary Care</div>
-        <div class="card__body">Free and low-cost clinics, FQHCs, and walk-in care across NJ.</div>
-        <a href="public-services.html" class="card__link">View resources →</a>
-      </div>
-      <div class="card card--muted">
-        <div class="card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-        </div>
-        <div class="card__title">Mental Health</div>
-        <div class="card__body">Hotlines, counseling services, and community support networks.</div>
-        <a href="public-services.html" class="card__link">View resources →</a>
-      </div>
-      <div class="card card--muted">
-        <div class="card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"/></svg>
-        </div>
-        <div class="card__title">Food Access</div>
-        <div class="card__body">Food banks, SNAP assistance, community fridges, and meal programs.</div>
-        <a href="public-services.html" class="card__link">View resources →</a>
-      </div>
-      <div class="card card--muted">
-        <div class="card__icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
-        <div class="card__title">Housing</div>
-        <div class="card__body">Emergency shelter, rental assistance, and tenant rights information.</div>
-        <a href="public-services.html" class="card__link">View resources →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Latest Posts ─── -->
-<section style="padding:var(--section-y) 0;">
-  <div class="section">
-    <div class="section-header">
-      <span class="badge badge--teal">From the Blog</span>
-      <h2>Latest writing</h2>
-      <p>Recent articles and reflections on public health access, advocacy, and community.</p>
-    </div>
-    <div class="grid-3">
-      <!-- Post card 1 -->
-      <article class="post-card">
-        <div class="post-card__thumb">[ Post thumbnail ]</div>
-        <div class="post-card__body">
-          <div class="post-card__meta">
-            <span class="badge badge--teal">Policy</span>
-            <span>— min read</span>
-          </div>
-          <h3 class="post-card__title">[ Article headline goes here ]</h3>
-          <p class="post-card__excerpt">A brief excerpt from the article that gives readers a sense of what this post is about and why it matters.</p>
-          <div class="post-card__footer">
-            <div class="post-card__author">
-              <div class="post-card__avatar"></div>
-              <span>Ojacklyn</span>
-            </div>
-            <a href="blog.html" class="btn btn--ghost" style="font-size:.8rem;padding:.3rem .75rem;">Read →</a>
-          </div>
-        </div>
-      </article>
-      <!-- Post card 2 -->
-      <article class="post-card">
-        <div class="post-card__thumb">[ Post thumbnail ]</div>
-        <div class="post-card__body">
-          <div class="post-card__meta">
-            <span class="badge badge--green">Community</span>
-            <span>— min read</span>
-          </div>
-          <h3 class="post-card__title">[ Article headline goes here ]</h3>
-          <p class="post-card__excerpt">A brief excerpt from the article that gives readers a sense of what this post is about and why it matters.</p>
-          <div class="post-card__footer">
-            <div class="post-card__author">
-              <div class="post-card__avatar"></div>
-              <span>Ojacklyn</span>
-            </div>
-            <a href="blog.html" class="btn btn--ghost" style="font-size:.8rem;padding:.3rem .75rem;">Read →</a>
-          </div>
-        </div>
-      </article>
-      <!-- Post card 3 -->
-      <article class="post-card">
-        <div class="post-card__thumb">[ Post thumbnail ]</div>
-        <div class="post-card__body">
-          <div class="post-card__meta">
-            <span class="badge badge--blue">Health Equity</span>
-            <span>— min read</span>
-          </div>
-          <h3 class="post-card__title">[ Article headline goes here ]</h3>
-          <p class="post-card__excerpt">A brief excerpt from the article that gives readers a sense of what this post is about and why it matters.</p>
-          <div class="post-card__footer">
-            <div class="post-card__author">
-              <div class="post-card__avatar"></div>
-              <span>Ojacklyn</span>
-            </div>
-            <a href="blog.html" class="btn btn--ghost" style="font-size:.8rem;padding:.3rem .75rem;">Read →</a>
-          </div>
-        </div>
-      </article>
-    </div>
-    <div style="text-align:center;margin-top:3rem;">
-      <a href="blog.html" class="btn btn--outline btn--lg">View all posts</a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── CTA Banner ─── -->
-<section style="background:var(--color-bg-secondary);padding:var(--section-y) 0;">
-  <div class="section">
-    <div class="callout callout--teal">
-      <div class="callout__icon">📬</div>
-      <div class="callout__text">
-        <h3>Stay in the loop.</h3>
-        <p>Get notified when new resources and articles are added. No spam — just updates that matter.</p>
-      </div>
-      <form style="display:flex;gap:.75rem;flex-wrap:wrap;flex-shrink:0;">
-        <input type="email" placeholder="your@email.com" style="padding:.65rem 1.1rem;border:1px solid var(--color-border-medium);border-radius:var(--radius-md);font-size:var(--text-sm);font-family:var(--font-sans);outline:none;background:#fff;">
-        <button type="submit" class="btn btn--primary">Subscribe</button>
-      </form>
-    </div>
-  </div>
-</section>
-
-<!-- ─── Footer ─── -->
-<footer class="footer">
-  <div class="footer__inner">
-    <div class="footer__top">
-      <a href="index.html" class="footer__logo">
-        <div class="footer__logo-mark">
-          <svg viewBox="0 0 16 16"><path d="M8 2a6 6 0 100 12A6 6 0 008 2zm0 2a4 4 0 110 8A4 4 0 018 4z"/></svg>
-        </div>
-        Ojacklyn
-      </a>
-      <div class="footer__social">
-        <a href="#">𝕏</a>
-        <a href="#">IG</a>
-        <a href="#">in</a>
-      </div>
-    </div>
-    <div class="footer__grid">
-      <div class="footer__col">
-        <h4>Navigate</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="public-services.html">Public Services</a></li>
-          <li><a href="about.html">About</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="public-services.html">Primary Care</a></li>
-          <li><a href="public-services.html">Mental Health</a></li>
-          <li><a href="public-services.html">Food Access</a></li>
-          <li><a href="public-services.html">Housing</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>Blog Topics</h4>
-        <ul>
-          <li><a href="blog.html">Health Equity</a></li>
-          <li><a href="blog.html">Policy</a></li>
-          <li><a href="blog.html">Community</a></li>
-          <li><a href="blog.html">Personal</a></li>
-        </ul>
-      </div>
-      <div class="footer__col">
-        <h4>More</h4>
-        <ul>
-          <li><a href="about.html">About</a></li>
-          <li><a href="#">Submit a Resource</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p>© 2026 Ojacklyn. Made with care in New Jersey.</p>
-      <div class="footer__legal">
-        <a href="#">Privacy</a>
-        <a href="#">Accessibility</a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-</body>
+    <!-- Schema.org structured data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Ojacklyn",
+      "url": "https://ojacklyn.com/",
+      "description": "Free public health resources and community services for underserved communities in New Jersey",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://ojacklyn.com/?search={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+  </head>
+  <body class="bg-[#fcfbf9] text-[#1e2524] antialiased">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
