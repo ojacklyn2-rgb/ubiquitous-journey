@@ -76,7 +76,7 @@ export default function PublicServices({ onSelectResource }: PublicServicesProps
           <button
             key={resource.id}
             onClick={() => onSelectResource(resource.id)}
-            className="text-left bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md hover:border-teal-200 transition-all p-6 flex flex-col group"
+            className="card-lift text-left bg-white rounded-2xl border border-gray-100 p-6 flex flex-col group cursor-pointer"
           >
             {/* Category badges */}
             <div className="flex flex-wrap gap-1 mb-3">
@@ -88,7 +88,7 @@ export default function PublicServices({ onSelectResource }: PublicServicesProps
             </div>
 
             {/* Name & subtitle */}
-            <h2 className="text-base font-bold text-gray-900 mb-1 group-hover:text-teal-700 transition-colors leading-snug">
+            <h2 className="font-display text-base font-bold text-gray-900 mb-1 group-hover:text-teal-700 transition-colors leading-snug">
               {resource.name}
             </h2>
             <p className="text-sm text-gray-500 mb-4 line-clamp-2 leading-relaxed flex-grow">
