@@ -1,24 +1,9 @@
 import { Mail, ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
-import { useState, FormEvent } from 'react';
+import { useForm, ValidationError } from '@formspree/react';
 
 export default function AboutPanel() {
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setLoading(true);
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    await fetch('https://formspree.io/f/xlgkbgkw', {
-      method: 'POST',
-      body: data,
-      headers: { Accept: 'application/json' },
-    });
-    setLoading(false);
-    setSubmitted(true);
-  };
+  const [state, handleSubmit] = useForm('xlgkbgkw');
 
   return (
     <div className="max-w-3xl mx-auto py-10 px-4 space-y-12">
@@ -101,7 +86,15 @@ export default function AboutPanel() {
           Whether you're a community health worker, policymaker, or a resident with a resource to share — reach out.
         </p>
 
-        {!submitted ? (
+        {state.succeeded ? (
+          <div className="bg-teal-50 border border-teal-200 rounded-2xl p-8 text-center">
+            <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
+              <ArrowRight size={18} className="text-teal-600" />
+            </div>
+            <h3 className="font-display font-bold text-gray-900 mb-1">Message Sent</h3>
+            <p className="text-sm text-gray-500 font-sans">Thanks for reaching out. I'll be in touch soon.</p>
+          </div>
+        ) : (
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div>
@@ -119,25 +112,19 @@ export default function AboutPanel() {
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Email *</label>
               <input type="email" name="email" required placeholder="jane@example.com"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition font-sans" />
+              <ValidationError field="email" errors={state.errors} className="text-red-500 text-xs mt-1" />
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-1.5">Message</label>
               <textarea rows={4} name="message" placeholder="How can I help you?"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-400 focus:border-transparent transition resize-none font-sans" />
+              <ValidationError field="message" errors={state.errors} className="text-red-500 text-xs mt-1" />
             </div>
-            <button type="submit" disabled={loading}
+            <button type="submit" disabled={state.submitting}
               className="flex items-center gap-2 bg-gray-900 hover:bg-gray-800 disabled:opacity-60 text-white font-semibold px-6 py-3 rounded-xl transition-colors cursor-pointer">
-              {loading ? 'Sending…' : 'Send Message'} <ArrowRight size={16} />
+              {state.submitting ? 'Sending…' : 'Send Message'} <ArrowRight size={16} />
             </button>
           </form>
-        ) : (
-          <div className="bg-teal-50 border border-teal-200 rounded-2xl p-8 text-center">
-            <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-3">
-              <ArrowRight size={18} className="text-teal-600" />
-            </div>
-            <h3 className="font-display font-bold text-gray-900 mb-1">Message Sent</h3>
-            <p className="text-sm text-gray-500 font-sans">Thanks for reaching out. I'll be in touch soon.</p>
-          </div>
         )}
 
         <div className="mt-8 pt-6 border-t border-gray-100 flex items-center gap-2 text-sm text-gray-400 font-sans">
