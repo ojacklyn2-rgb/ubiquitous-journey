@@ -46,20 +46,6 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
 
       {/* ── Hero ── */}
       <section className="relative max-w-3xl mx-auto px-4 text-center">
-        {/* Animated background orbs — rendered outside section so no clipping */}
-        <div className="pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden>
-          <motion.div
-            animate={{ scale: [1, 1.15, 1], opacity: [0.14, 0.22, 0.14] }}
-            transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
-            className="absolute top-10 left-10 w-96 h-96 rounded-full bg-teal-200 blur-3xl"
-          />
-          <motion.div
-            animate={{ scale: [1, 1.2, 1], opacity: [0.09, 0.18, 0.09] }}
-            transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
-            className="absolute top-0 right-10 w-80 h-80 rounded-full bg-emerald-200 blur-3xl"
-          />
-        </div>
-
         <motion.div
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
@@ -224,7 +210,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
                   { topic: 'Community',     preview: 'Newark\'s food sovereignty movement and the dignity embedded in every community fridge.' },
                 ].map((item) => (
                   <div key={item.topic} className="bg-white/5 border border-white/10 rounded-xl px-5 py-4">
-                    <span className="block text-xs font-mono font-semibold text-teal-400 uppercase tracking-widest mb-1">{item.topic}</span>
+                    <span className="block text-xs font-sans font-medium text-teal-400 mb-1">{item.topic}</span>
                     <p className="text-sm text-gray-300 leading-relaxed italic">{item.preview}</p>
                   </div>
                 ))}
@@ -241,11 +227,11 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className="mb-8"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">Who I Serve</h2>
-          <p className="text-gray-500 max-w-lg mx-auto text-sm leading-relaxed">
-            Every resource is organized around the people who need it most. Find your category and get directly to what applies to you.
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">Who I Serve</h2>
+          <p className="text-gray-500 text-sm leading-relaxed">
+            Every resource is organized around the people who need it most.
           </p>
         </motion.div>
 
@@ -290,10 +276,10 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-10"
+          className="mb-8"
         >
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-3">How It Works</h2>
-          <p className="text-gray-500 max-w-md mx-auto text-sm leading-relaxed">
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-2">How It Works</h2>
+          <p className="text-gray-500 text-sm leading-relaxed">
             No account. No form. Just a clear path to the help you need.
           </p>
         </motion.div>
@@ -310,7 +296,6 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
                 transition={{ duration: 0.4, delay: i * 0.1 }}
                 className="relative bg-white rounded-2xl border border-gray-100 p-7 shadow-sm overflow-hidden"
               >
-                <span className="text-6xl font-black text-gray-50 absolute top-4 right-5 select-none leading-none">{step.step}</span>
                 <div className="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="w-5 h-5 text-teal-600" />
                 </div>
@@ -389,7 +374,7 @@ export default function DashboardHome({ setView, setSelectedBlogId }: DashboardH
         >
           <div
             className="absolute inset-0 opacity-5"
-            style={{ backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)', backgroundSize: '28px 28px' }}
+            style={{ display: 'none' }}
           />
           <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
             <div className="flex-1 space-y-4">
